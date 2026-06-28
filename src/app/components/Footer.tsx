@@ -44,7 +44,8 @@ export function Footer() {
 
         <div className="border-t flex items-center justify-center pt-8" style={{ borderColor: "var(--glass-border)" }}>
           <p className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}>
-            (c) 2026 Mehwish Shahzad. Crafted with focus and purpose.
+            (c) 2026 Mehwish Shahzad. All rights reserved.
+            Built with React, powered by curiosity, and driven by data.
           </p>
         </div>
       </div>
