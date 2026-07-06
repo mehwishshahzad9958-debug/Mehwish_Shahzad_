@@ -2,24 +2,13 @@ import { useEffect, useState, useRef } from "react";
 import { Github, Linkedin, Mail, ChevronDown, Download, Eye } from "lucide-react";
 import myProfilePicture from '../../profile.jpeg';
 import { motion } from "motion/react";
-<<<<<<< HEAD
-
-const typingPhrases = [
-  "Technical Project Coordinator",
-  "Data Analyst",
-  "AI-Powered Product Operations",
-  "DCEM Operations Lead",
-  "Power BI + SQL Practitioner",
-=======
 import { ImpactCards } from "./ImpactCards";
-
 const typingPhrases = [
   "Agile Delivery",
   "Project Governance",
   "Data-Driven Decision Maker",
   "Stakeholder Management",
   "Power BI Reporting",
->>>>>>> main
 ];
 export function Hero() {
   const [displayText, setDisplayText] = useState("");
@@ -123,11 +112,7 @@ export function Hero() {
             }}
           >
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-<<<<<<< HEAD
             Available for Opportunities
-=======
-            Ready to Drive Your Next Project
->>>>>>> main
           </div>
 
           <h1
@@ -136,47 +121,34 @@ export function Hero() {
               fontFamily: "var(--font-display)",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
               fontWeight: 800,
-<<<<<<< HEAD
               color: "#e8eaf6",
             }}
           >
             Hi, I'm{" "}
-=======
-              color: "var(--foreground)",
-            }}
-          >
-            Hi, I'm a{" "}
->>>>>>> main
             <span
               style={{
                 background: "linear-gradient(135deg, #2979ff 0%, #7c3aed 50%, #00e5ff 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
-<<<<<<< HEAD
             >
               Mehwish
             </span>
             <br />
             Shahzad
-=======
              
             >
               PROJECT
             </span>
             <br />
             Manager
->>>>>>> main
           </h1>
 
           {/* Typing effect */}
           <div
             className="mb-6 flex items-center gap-2"
-<<<<<<< HEAD
             style={{ fontFamily: "var(--font-mono)", color: "#8892b0" }}
-=======
             style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}
->>>>>>> main
           >
             <span style={{ color: "#2979ff" }}>&gt;</span>
             <span className="text-foreground">
@@ -194,7 +166,6 @@ export function Hero() {
             className="mb-8 max-w-lg leading-relaxed"
             style={{
               fontFamily: "var(--font-body)",
-<<<<<<< HEAD
               color: "#8892b0",
               fontSize: "1.05rem",
             }}
@@ -204,22 +175,6 @@ export function Hero() {
             that help teams move from scattered updates to confident execution.
           </p>
 
-=======
-              color: "var(--muted-foreground)",
-              fontSize: "1.05rem",
-            }}
-          >
-            Scaled Agile delivery across 10+ cross-functional teams, managing 284,452
-             Trouble Tickets while strengthening governance, improving operational visibility, 
-             and accelerating business decision-making.
-            
-          </p>
-           ▲ 5%
-            Equipment Connection Accuracy
-            Improved in 2 Months
-            <ImpactCards />
-            <div className="mt-12 flex gap-4"></div>
->>>>>>> main
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 mb-8">
             <button
@@ -315,16 +270,12 @@ export function Hero() {
                 className="absolute inset-0 flex items-end justify-center pb-6"
                 style={{ background: "linear-gradient(to top, rgba(5,7,26,0.7), transparent)" }}
               >
-                <span
-<<<<<<< HEAD
-                  className="text-sm font-medium tracking-widest"
-=======
-                  className="text-1xl md:text-1xl font-bold tracking-[0.2em] uppercase"
->>>>>>> main
-                  style={{ fontFamily: "var(--font-mono)", color: "#4f9aff" }}
-                >
-                  MEHWISH.SHAHZAD
-                </span>
+               <span 
+              className="text-1xl md:text-1xl font-bold tracking-[0.2em] uppercase" 
+              style={{ fontFamily: "var(--font-mono)", color: "#4f9aff" }}
+            >
+              MEHWISH.SHAHZAD
+            </span> 
               </div>
             </div>
 
@@ -334,44 +285,32 @@ export function Hero() {
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               className="absolute -top-4 -right-4 px-3 py-2 rounded-xl border text-xs"
               style={{
-<<<<<<< HEAD
                 background: "rgba(13, 17, 48, 0.9)",
-=======
                 background: "var(--card)",
->>>>>>> main
                 borderColor: "rgba(41, 121, 255, 0.3)",
                 color: "#4f9aff",
                 fontFamily: "var(--font-mono)",
                 backdropFilter: "blur(10px)",
               }}
             >
-<<<<<<< HEAD
               Data Analyst
-=======
               Project Lead (Agile)
->>>>>>> main
             </motion.div>
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
               className="absolute -bottom-4 -left-4 px-3 py-2 rounded-xl border text-xs"
               style={{
-<<<<<<< HEAD
                 background: "rgba(13, 17, 48, 0.9)",
-=======
                 background: "var(--card)",
->>>>>>> main
                 borderColor: "rgba(124, 58, 237, 0.3)",
                 color: "#a78bfa",
                 fontFamily: "var(--font-mono)",
                 backdropFilter: "blur(10px)",
               }}
             >
-<<<<<<< HEAD
               DCEM Ops Lead
-=======
               Cross-Functional Delivery
->>>>>>> main
             </motion.div>
           </div>
         </motion.div>
