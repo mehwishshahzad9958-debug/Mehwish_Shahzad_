@@ -90,6 +90,11 @@ The deployment publishes the contents of `dist/` to GitHub Pages.
 ├─ pnpm-workspace.yaml
 └─ ATTRIBUTIONS.md
 ```
+<<<<<<< HEAD
+=======
+## *Figma Design*
+https://www.figma.com/make/Ra6w9SIp7hmxWI2vYDDfxJ/Interactive-Personal-Portfolio-Website?t=pPHcXoIPUPZzd05E-20&fullscreen=1
+>>>>>>> bd7b61c16c76182405d38947fbef3f9cfff51b61
 
 ## Project Structure (High Level)
 - `src/main.tsx` — React entry point
@@ -98,13 +103,19 @@ The deployment publishes the contents of `dist/` to GitHub Pages.
 - `src/styles/` — global and theme styles
 - `vite.config.ts` — Vite config (includes Tailwind + a small custom asset resolver)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bd7b61c16c76182405d38947fbef3f9cfff51b61
 ---
 
 ## Credits / Licensing
 See [ATTRIBUTIONS.md](./ATTRIBUTIONS.md) for third-party asset and license attributions (e.g., shadcn/ui, Unsplash).
+<<<<<<< HEAD
 
 ---
 
 ## License
 Add your project license here (if applicable).
+=======
+>>>>>>> bd7b61c16c76182405d38947fbef3f9cfff51b61
