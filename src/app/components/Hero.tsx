@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Github, Linkedin, Mail, ChevronDown, Download, Eye } from "lucide-react";
-import myProfilePicture from '../../profile.jpeg';
+import myProfilePicture from '../../../profile.jpeg';
 import { motion } from "motion/react";
 import { ImpactCards } from "./ImpactCards";
 
