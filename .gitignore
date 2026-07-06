@@ -3,3 +3,6 @@ node_modules
 .claude-dev-helper
 dist
 .env
+node_modules
+dist
+.DS_Store
