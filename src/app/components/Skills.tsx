@@ -42,7 +42,11 @@ function SkillBar({ name, level, color, inView, delay }: { name: string; level: 
   return (
     <div className="mb-4">
       <div className="flex justify-between mb-1.5">
+<<<<<<< HEAD
         <span className="text-sm" style={{ fontFamily: "var(--font-body)", color: "#ccd6f6" }}>
+=======
+        <span className="text-sm" style={{ fontFamily: "var(--font-body)", color: "var(--foreground)" }}>
+>>>>>>> main
           {name}
         </span>
         <span className="text-xs" style={{ fontFamily: "var(--font-mono)", color }}>
@@ -72,7 +76,11 @@ export function Skills() {
       id="skills"
       ref={ref}
       className="py-28 px-6"
+<<<<<<< HEAD
       style={{ background: "linear-gradient(180deg, var(--navy) 0%, #080c26 100%)" }}
+=======
+      style={{ background: "linear-gradient(180deg, var(--navy) 0%, var(--card) 100%)" }}
+>>>>>>> main
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
@@ -93,7 +101,11 @@ export function Skills() {
               fontFamily: "var(--font-display)",
               fontSize: "clamp(2rem, 4vw, 3rem)",
               fontWeight: 700,
+<<<<<<< HEAD
               color: "#e8eaf6",
+=======
+              color: "var(--foreground)",
+>>>>>>> main
             }}
           >
             Technical &{" "}
@@ -107,7 +119,11 @@ export function Skills() {
               Operations Toolkit
             </span>
           </h2>
+<<<<<<< HEAD
           <p className="max-w-xl mx-auto text-sm" style={{ color: "#8892b0", fontFamily: "var(--font-body)", lineHeight: 1.8 }}>
+=======
+          <p className="max-w-xl mx-auto text-sm" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)", lineHeight: 1.8 }}>
+>>>>>>> main
             A practical skill set across analytics, coordination, AI workflows, and engineering-adjacent tooling.
           </p>
         </motion.div>
@@ -122,7 +138,11 @@ export function Skills() {
                 fontFamily: "var(--font-body)",
                 background: active === cat.id ? `${cat.color}1a` : "var(--glass)",
                 borderColor: active === cat.id ? cat.color + "60" : "var(--glass-border)",
+<<<<<<< HEAD
                 color: active === cat.id ? cat.color : "#8892b0",
+=======
+                color: active === cat.id ? cat.color : "var(--muted-foreground)",
+>>>>>>> main
                 backdropFilter: "blur(10px)",
               }}
             >
@@ -189,7 +209,11 @@ export function Skills() {
                 <span className="text-4xl font-bold" style={{ fontFamily: "var(--font-display)", color: current.color }}>
                   {Math.round(current.skills.reduce((a, s) => a + s.level, 0) / current.skills.length)}%
                 </span>
+<<<<<<< HEAD
                 <span className="text-xs mt-1" style={{ fontFamily: "var(--font-mono)", color: "#8892b0" }}>
+=======
+                <span className="text-xs mt-1" style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}>
+>>>>>>> main
                   focus strength
                 </span>
               </div>

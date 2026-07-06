@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
 
 const navLinks = [
@@ -15,6 +16,15 @@ export function Footer() {
     <footer className="pt-16 pb-8 px-6 border-t" style={{ background: "#030614", borderColor: "var(--glass-border)" }}>
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
+=======
+import { Github, Linkedin, Mail } from "lucide-react";
+
+export function Footer() {
+  return (
+    <footer className="pt-16 pb-8 px-6 border-t" style={{ background: "var(--navy)", borderColor: "var(--glass-border)" }}>
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-10">
+>>>>>>> main
           <div>
             <div
               className="text-2xl font-bold mb-3"
@@ -27,7 +37,11 @@ export function Footer() {
             >
               Mehwish Shahzad
             </div>
+<<<<<<< HEAD
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#8892b0", fontFamily: "var(--font-body)" }}>
+=======
+            <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}>
+>>>>>>> main
               Technical Project Coordinator, Data Analyst, and AI-powered product operations practitioner open to work all over India.
             </p>
             <div className="flex gap-3">
@@ -43,13 +57,18 @@ export function Footer() {
                   rel={href.startsWith("http") ? "noreferrer" : undefined}
                   aria-label={label}
                   className="p-2.5 rounded-xl border transition-all hover:border-primary hover:scale-110"
+<<<<<<< HEAD
                   style={{ borderColor: "var(--glass-border)", color: "#8892b0" }}
+=======
+                  style={{ borderColor: "var(--glass-border)", color: "var(--muted-foreground)" }}
+>>>>>>> main
                 >
                   <Icon size={15} />
                 </a>
               ))}
             </div>
           </div>
+<<<<<<< HEAD
 
           <div>
             <h4 className="text-xs uppercase tracking-widest mb-5" style={{ fontFamily: "var(--font-mono)", color: "#2979ff" }}>
@@ -101,6 +120,15 @@ export function Footer() {
             <ArrowUp size={12} />
             Back to top
           </button>
+=======
+        </div>
+
+        <div className="border-t flex items-center justify-center pt-8" style={{ borderColor: "var(--glass-border)" }}>
+          <p className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}>
+            (c) 2026 Mehwish Shahzad. All rights reserved.
+            Built with React, powered by curiosity, and driven by data.
+          </p>
+>>>>>>> main
         </div>
       </div>
     </footer>
