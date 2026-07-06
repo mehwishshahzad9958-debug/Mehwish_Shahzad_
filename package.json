@@ -1,4 +1,7 @@
 {
+<<<<<<< HEAD
+  "type": "module"
+=======
   "name": "@Mehwish-Shahzad/Portfolio",
   "private": true,
   "version": "0.0.1",
@@ -89,4 +92,5 @@
       "vite": "6.3.5"
     }
   }
+>>>>>>> main
 }

@@ -47,7 +47,11 @@ export function Contact() {
               fontFamily: "var(--font-display)",
               fontSize: "clamp(2rem, 4vw, 3rem)",
               fontWeight: 700,
+<<<<<<< HEAD
+              color: "#e8eaf6",
+=======
               color: "var(--foreground)",
+>>>>>>> main
             }}
           >
             Let's Build Something{" "}
@@ -55,7 +59,11 @@ export function Contact() {
               Together
             </span>
           </h2>
+<<<<<<< HEAD
+          <p className="max-w-xl mx-auto text-sm" style={{ color: "#8892b0", fontFamily: "var(--font-body)", lineHeight: 1.8 }}>
+=======
           <p className="max-w-xl mx-auto text-sm" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)", lineHeight: 1.8 }}>
+>>>>>>> main
             Open to project coordination, data analyst, and AI-powered product operations opportunities all over India.
           </p>
         </motion.div>
@@ -77,7 +85,11 @@ export function Contact() {
             >
               <h3
                 className="mb-6"
+<<<<<<< HEAD
+                style={{ fontFamily: "var(--font-display)", color: "#e8eaf6", fontWeight: 700, fontSize: "1.25rem" }}
+=======
                 style={{ fontFamily: "var(--font-display)", color: "var(--foreground)", fontWeight: 700, fontSize: "1.25rem" }}
+>>>>>>> main
               >
                 Get in Touch
               </h3>
@@ -97,7 +109,11 @@ export function Contact() {
                       <Icon size={16} style={{ color }} />
                     </div>
                     <div>
+<<<<<<< HEAD
+                      <p className="text-xs mb-0.5" style={{ fontFamily: "var(--font-mono)", color: "#8892b0" }}>
+=======
                       <p className="text-xs mb-0.5" style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}>
+>>>>>>> main
                         {label}
                       </p>
                       {href ? (
@@ -106,12 +122,20 @@ export function Contact() {
                           target={href.startsWith("http") ? "_blank" : undefined}
                           rel={href.startsWith("http") ? "noreferrer" : undefined}
                           className="text-sm hover:underline"
+<<<<<<< HEAD
+                          style={{ fontFamily: "var(--font-body)", color: "#ccd6f6" }}
+=======
                           style={{ fontFamily: "var(--font-body)", color: "var(--foreground)" }}
+>>>>>>> main
                         >
                           {value}
                         </a>
                       ) : (
+<<<<<<< HEAD
+                        <p className="text-sm" style={{ fontFamily: "var(--font-body)", color: "#ccd6f6" }}>
+=======
                         <p className="text-sm" style={{ fontFamily: "var(--font-body)", color: "var(--foreground)" }}>
+>>>>>>> main
                           {value}
                         </p>
                       )}
@@ -127,7 +151,11 @@ export function Contact() {
                 <p className="text-xs mb-1" style={{ fontFamily: "var(--font-mono)", color: "#2979ff" }}>
                   Availability
                 </p>
+<<<<<<< HEAD
+                <p className="text-sm" style={{ fontFamily: "var(--font-body)", color: "#8892b0" }}>
+=======
                 <p className="text-sm" style={{ fontFamily: "var(--font-body)", color: "var(--muted-foreground)" }}>
+>>>>>>> main
                   Open to project coordination, data analyst, and AI-powered product operations roles all over India. Response within{" "}
                   <span style={{ color: "#4f9aff" }}>24 hours</span>.
                 </p>
@@ -149,11 +177,19 @@ export function Contact() {
                 <CheckCircle size={48} className="mb-4" style={{ color: "#22c55e" }} />
                 <h3
                   className="mb-2"
+<<<<<<< HEAD
+                  style={{ fontFamily: "var(--font-display)", color: "#e8eaf6", fontWeight: 700, fontSize: "1.25rem" }}
+                >
+                  Message Sent!
+                </h3>
+                <p className="text-sm" style={{ color: "#8892b0", fontFamily: "var(--font-body)" }}>
+=======
                   style={{ fontFamily: "var(--font-display)", color: "var(--foreground)", fontWeight: 700, fontSize: "1.25rem" }}
                 >
                   Message Sent!
                 </h3>
                 <p className="text-sm" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}>
+>>>>>>> main
                   Thanks for reaching out. I'll get back to you within 24 hours.
                 </p>
               </div>
@@ -171,7 +207,11 @@ export function Contact() {
                     <div key={name}>
                       <label
                         className="block text-xs mb-2"
+<<<<<<< HEAD
+                        style={{ fontFamily: "var(--font-mono)", color: "#8892b0" }}
+=======
                         style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}
+>>>>>>> main
                       >
                         {label}
                       </label>
@@ -184,9 +224,15 @@ export function Contact() {
                         required
                         className="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all focus:border-primary"
                         style={{
+<<<<<<< HEAD
+                          background: "#111633",
+                          borderColor: "var(--glass-border)",
+                          color: "#e8eaf6",
+=======
                           background: "var(--input)",
                           borderColor: "var(--glass-border)",
                           color: "var(--foreground)",
+>>>>>>> main
                           fontFamily: "var(--font-body)",
                         }}
                       />
@@ -195,7 +241,11 @@ export function Contact() {
                   <div>
                     <label
                       className="block text-xs mb-2"
+<<<<<<< HEAD
+                      style={{ fontFamily: "var(--font-mono)", color: "#8892b0" }}
+=======
                       style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}
+>>>>>>> main
                     >
                       Message
                     </label>
@@ -208,9 +258,15 @@ export function Contact() {
                       required
                       className="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all focus:border-primary resize-none"
                       style={{
+<<<<<<< HEAD
+                        background: "#111633",
+                        borderColor: "var(--glass-border)",
+                        color: "#e8eaf6",
+=======
                         background: "var(--input)",
                         borderColor: "var(--glass-border)",
                         color: "var(--foreground)",
+>>>>>>> main
                         fontFamily: "var(--font-body)",
                       }}
                     />

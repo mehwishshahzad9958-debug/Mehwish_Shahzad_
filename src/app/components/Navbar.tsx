@@ -53,12 +53,71 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
           : "bg-transparent"
       }`}
       style={{
+<<<<<<< HEAD
+        background: scrolled ? "rgba(5, 7, 26, 0.85)" : "transparent",
+=======
         background: scrolled ? "var(--glass)" : "transparent",
+>>>>>>> main
         borderColor: "var(--glass-border)",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <button
+<<<<<<< HEAD
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="flex items-center gap-2 group"
+        >
+          <span
+            className="text-xl font-bold tracking-tight"
+            style={{
+              fontFamily: "var(--font-display)",
+              background: "linear-gradient(135deg, #2979ff, #7c3aed)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            MS
+          </span>
+          <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+            Mehwish Shahzad
+          </span>
+        </button>
+
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-1">
+          {navLinks.map(({ label, href }) => (
+            <button
+              key={label}
+              onClick={() => scrollTo(href)}
+              className={`px-4 py-2 text-sm rounded-lg transition-all duration-200 ${
+                activeSection === href.slice(1)
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+              style={{
+                fontFamily: "var(--font-body)",
+                background:
+                  activeSection === href.slice(1)
+                    ? "rgba(41, 121, 255, 0.1)"
+                    : "transparent",
+              }}
+            >
+              {label}
+            </button>
+          ))}
+          <button
+            onClick={toggleDark}
+            className="ml-2 p-2 rounded-lg border transition-all hover:border-primary"
+            style={{ borderColor: "var(--glass-border)" }}
+          >
+            {darkMode ? (
+              <Sun size={16} className="text-muted-foreground" />
+            ) : (
+              <Moon size={16} className="text-muted-foreground" />
+            )}
+          </button>
+        </div>
+=======
   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
   className="group"
 >
@@ -119,6 +178,7 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
                 )}
               </button>
             </div>
+>>>>>>> main
 
         {/* Mobile hamburger */}
         <div className="flex md:hidden items-center gap-2">
@@ -135,7 +195,11 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
       {mobileOpen && (
         <div
           className="md:hidden px-6 pb-6 pt-2 border-t flex flex-col gap-1"
+<<<<<<< HEAD
+          style={{ borderColor: "var(--glass-border)", background: "rgba(5, 7, 26, 0.95)" }}
+=======
           style={{ borderColor: "var(--glass-border)", background: "var(--glass)" }}
+>>>>>>> main
         >
           {navLinks.map(({ label, href }) => (
             <button

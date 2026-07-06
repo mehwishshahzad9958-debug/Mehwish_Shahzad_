@@ -74,10 +74,17 @@ export function About() {
               fontFamily: "var(--font-display)",
               fontSize: "clamp(2rem, 4vw, 3rem)",
               fontWeight: 700,
+<<<<<<< HEAD
+              color: "#e8eaf6",
+            }}
+          >
+            Turning Data Into{" "}
+=======
               color: "var(--foreground)",
             }}
           >
             Leading Agile Delivery -{" "}
+>>>>>>> main
             <span
               style={{
                 background: "linear-gradient(135deg, #2979ff, #7c3aed)",
@@ -85,9 +92,22 @@ export function About() {
                 WebkitTextFillColor: "transparent",
               }}
             >
+<<<<<<< HEAD
+              Operational Clarity
+            </span>
+          </h2>
+          <p className="max-w-2xl mx-auto" style={{ color: "#8892b0", fontFamily: "var(--font-body)", lineHeight: 1.8 }}>
+            I'm Mehwish Shahzad, a Technical Project Coordinator and Data Analyst focused on
+            AI-powered product operations. My work connects DCEM operations, stakeholder
+            coordination, analytics, and practical automation so teams can make clearer,
+            faster decisions.
+          </p>
+        </motion.div>
+=======
               Operational Excellence
             </span>
         
+>>>>>>> main
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <motion.div
@@ -97,7 +117,11 @@ export function About() {
           >
             <h3
               className="mb-8 flex items-center gap-3"
+<<<<<<< HEAD
+              style={{ fontFamily: "var(--font-display)", color: "#e8eaf6", fontWeight: 600, fontSize: "1.25rem" }}
+=======
               style={{ fontFamily: "var(--font-display)", color: "var(--foreground)", fontWeight: 600, fontSize: "1.25rem" }}
+>>>>>>> main
             >
               <span
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-xs"
@@ -127,13 +151,21 @@ export function About() {
                   <span className="text-xs mb-1 block" style={{ fontFamily: "var(--font-mono)", color: "#2979ff" }}>
                     {item.year}
                   </span>
+<<<<<<< HEAD
+                  <h4 className="mb-1" style={{ fontFamily: "var(--font-display)", color: "#e8eaf6", fontWeight: 600, fontSize: "1rem" }}>
+=======
                   <h4 className="mb-1" style={{ fontFamily: "var(--font-display)", color: "var(--foreground)", fontWeight: 600, fontSize: "1rem" }}>
+>>>>>>> main
                     {item.title}
                   </h4>
                   <p className="text-sm mb-0.5" style={{ color: "#4f9aff", fontFamily: "var(--font-body)" }}>
                     {item.org}
                   </p>
+<<<<<<< HEAD
+                  <p className="text-sm" style={{ color: "#8892b0", fontFamily: "var(--font-body)" }}>
+=======
                   <p className="text-sm" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}>
+>>>>>>> main
                     {item.detail}
                   </p>
                 </motion.div>
@@ -148,7 +180,11 @@ export function About() {
           >
             <h3
               className="mb-8 flex items-center gap-3"
+<<<<<<< HEAD
+              style={{ fontFamily: "var(--font-display)", color: "#e8eaf6", fontWeight: 600, fontSize: "1.25rem" }}
+=======
               style={{ fontFamily: "var(--font-display)", color: "var(--foreground)", fontWeight: 600, fontSize: "1.25rem" }}
+>>>>>>> main
             >
               <span
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-xs"
@@ -175,10 +211,17 @@ export function About() {
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ background: `${color}1a`, border: `1px solid ${color}33` }}>
                     <Icon size={18} style={{ color }} />
                   </div>
+<<<<<<< HEAD
+                  <h4 className="mb-1" style={{ fontFamily: "var(--font-display)", color: "#e8eaf6", fontWeight: 600, fontSize: "0.95rem" }}>
+                    {title}
+                  </h4>
+                  <p className="text-xs leading-relaxed" style={{ color: "#8892b0", fontFamily: "var(--font-body)" }}>
+=======
                   <h4 className="mb-1" style={{ fontFamily: "var(--font-display)", color: "var(--foreground)", fontWeight: 600, fontSize: "0.95rem" }}>
                     {title}
                   </h4>
                   <p className="text-xs leading-relaxed" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}>
+>>>>>>> main
                     {desc}
                   </p>
                 </motion.div>
@@ -195,7 +238,11 @@ export function About() {
               <p className="text-xs mb-2 uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)", color: "#2979ff" }}>
                 Career Objective
               </p>
+<<<<<<< HEAD
+              <p className="text-sm leading-relaxed" style={{ color: "#8892b0", fontFamily: "var(--font-body)" }}>
+=======
               <p className="text-sm leading-relaxed" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}>
+>>>>>>> main
                 To build high-trust product and operations workflows where analytics, project
                 coordination, and AI-assisted execution help teams deliver measurable outcomes
                 with less friction.

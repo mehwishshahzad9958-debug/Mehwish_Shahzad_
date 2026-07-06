@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+# Mehwish_Shahzad
+
+=======
 # Mehwish Shahzad — Personal Portfolio
 
 A sleek, interactive single-page portfolio built with **React (TypeScript)** and **Vite**, styled with **Tailwind CSS**. The app showcases your profile and sections such as **About, Skills, Experience, Projects, Contact**, and a **Footer**, with a dark/light mode toggle.
@@ -119,3 +123,4 @@ See [ATTRIBUTIONS.md](./ATTRIBUTIONS.md) for third-party asset and license attri
 Add your project license here (if applicable).
 =======
 >>>>>>> bd7b61c16c76182405d38947fbef3f9cfff51b61
+>>>>>>> main
