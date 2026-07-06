@@ -2,13 +2,14 @@ import { useEffect, useState, useRef } from "react";
 import { Github, Linkedin, Mail, ChevronDown, Download, Eye } from "lucide-react";
 import myProfilePicture from '../../profile.jpeg';
 import { motion } from "motion/react";
+import { ImpactCards } from "./ImpactCards";
 
 const typingPhrases = [
-  "Technical Project Coordinator",
-  "Data Analyst",
-  "AI-Powered Product Operations",
-  "DCEM Operations Lead",
-  "Power BI + SQL Practitioner",
+  "Agile Delivery",
+  "Project Governance",
+  "Data-Driven Decision Maker",
+  "Stakeholder Management",
+  "Power BI Reporting",
 ];
 export function Hero() {
   const [displayText, setDisplayText] = useState("");
@@ -112,7 +113,7 @@ export function Hero() {
             }}
           >
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            Available for Opportunities
+            Ready to Drive Your Next Project
           </div>
 
           <h1
@@ -124,18 +125,19 @@ export function Hero() {
               color: "var(--foreground)",
             }}
           >
-            Hi, I'm{" "}
+            Hi, I'm a{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #2979ff 0%, #7c3aed 50%, #00e5ff 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
+             
             >
-              Mehwish
+              PROJECT
             </span>
             <br />
-            Shahzad
+            Manager
           </h1>
 
           {/* Typing effect */}
@@ -163,11 +165,16 @@ export function Hero() {
               fontSize: "1.05rem",
             }}
           >
-            Technical Project Coordinator and Data Analyst focused on DCEM
-            operations, reporting clarity, and AI-powered product workflows
-            that help teams move from scattered updates to confident execution.
+            Scaled Agile delivery across 10+ cross-functional teams, managing 284,452
+             Trouble Tickets while strengthening governance, improving operational visibility, 
+             and accelerating business decision-making.
+            
           </p>
-
+           ▲ 5%
+            Equipment Connection Accuracy
+            Improved in 2 Months
+            <ImpactCards />
+            <div className="mt-12 flex gap-4"></div>
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 mb-8">
             <button
@@ -264,7 +271,7 @@ export function Hero() {
                 style={{ background: "linear-gradient(to top, rgba(5,7,26,0.7), transparent)" }}
               >
                 <span
-                  className="text-sm font-medium tracking-widest"
+                  className="text-1xl md:text-1xl font-bold tracking-[0.2em] uppercase"
                   style={{ fontFamily: "var(--font-mono)", color: "#4f9aff" }}
                 >
                   MEHWISH.SHAHZAD
@@ -285,7 +292,7 @@ export function Hero() {
                 backdropFilter: "blur(10px)",
               }}
             >
-              Data Analyst
+              Project Lead (Agile)
             </motion.div>
             <motion.div
               animate={{ y: [0, 8, 0] }}
@@ -299,7 +306,7 @@ export function Hero() {
                 backdropFilter: "blur(10px)",
               }}
             >
-              DCEM Ops Lead
+              Cross-Functional Delivery
             </motion.div>
           </div>
         </motion.div>

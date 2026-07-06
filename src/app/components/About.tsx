@@ -77,7 +77,7 @@ export function About() {
               color: "var(--foreground)",
             }}
           >
-            Turning Data Into{" "}
+            Leading Agile Delivery -{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #2979ff, #7c3aed)",
@@ -85,16 +85,9 @@ export function About() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Operational Clarity
+              Operational Excellence
             </span>
-          </h2>
-          <p className="max-w-2xl mx-auto" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)", lineHeight: 1.8 }}>
-            I'm Mehwish Shahzad, a Technical Project Coordinator and Data Analyst focused on
-            AI-powered product operations. My work connects DCEM operations, stakeholder
-            coordination, analytics, and practical automation so teams can make clearer,
-            faster decisions.
-          </p>
-        </motion.div>
+        
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <motion.div
