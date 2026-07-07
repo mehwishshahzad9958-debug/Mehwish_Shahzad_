@@ -1,51 +1,31 @@
-const impactMetrics = [
-  {
-    value: "3L",
-    label: "Tickets Managed",
-  },
-  {
-    value: "10+",
-    label: "Cross-Functional Teams",
-  },
-  {
-    value: "25+",
-    label: "Business Stakeholders",
-  },
-  {
-    value: "5",
-    label: "Power BI Dashboards",   
-  },
-];
-
 export function ImpactCards() {
-  return (
-    <div className="grid grid-cols-3 md:grid-cols-4 gap-4 mt-8 w-full">
-      {impactMetrics.map((metric, index) => (
-        <div
-          key={index}
-         className="
-          rounded-2xl
-          border
-          border-blue-500/20
-          bg-white/5
-          backdrop-blur-md
-          px-6
-          py-5
-          overflow-visible
-          min-w-0
-          transition-all
-          duration-300
-          hover:border-blue-500/60
-          hover:shadow-[0_0_25px_rgba(59,130,246,0.25)]
-          hover:-translate-y-1
-        "
-        >
-          <h3 className="text-[28px] md:text-3xl leading-none font-bold whitespace-nowrap bg-gradient-to-r from-blue-500 to-purple-400 bg-clip-text text-transparent">
-            {metric.value}
-          </h3>
+  const stats = [
+    { value: "3L", label: "Tickets Managed" },
+    { value: "10+", label: "Cross-Functional Teams" },
+    { value: "25+", label: "Business Stakeholders" },
+    { value: "5", label: "Power BI Dashboards" },
+  ];
 
-          <p className="mt-2 text-sm text-gray-300">
-            {metric.label}
+  return (
+    <div className="flex flex-wrap gap-3 mt-6">
+      {stats.map((stat, i) => (
+        <div 
+          key={i} 
+          className="bg-[#0f172a] border border-white/10 p-4 rounded-xl w-[120px] flex flex-col items-center justify-center text-center hover:border-blue-500/50 transition-colors"
+        >
+          {/* Apply the gradient to the number */}
+          <h3 
+            className="text-2xl font-bold tracking-tight"
+            style={{ 
+              background: "linear-gradient(135deg, #2979ff 0%, #7c3aed 50%, #00e5ff 100%)", 
+              WebkitBackgroundClip: "text", 
+              WebkitTextFillColor: "transparent" 
+            }}
+          >
+            {stat.value}
+          </h3>
+          <p className="text-[10px] text-gray-400 mt-1 uppercase tracking-wider font-medium leading-tight">
+            {stat.label}
           </p>
         </div>
       ))}

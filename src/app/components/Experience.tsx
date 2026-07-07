@@ -36,11 +36,7 @@ export function Experience() {
   const { ref, inView } = useInView(0.08);
 
   return (
-<<<<<<< HEAD
     <section id="experience" ref={ref} className="py-28 px-6" style={{ background: "#080c26" }}>
-=======
-    <section id="experience" ref={ref} className="py-28 px-6" style={{ background: "var(--navy)" }}>
->>>>>>> main
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -60,11 +56,7 @@ export function Experience() {
               fontFamily: "var(--font-display)",
               fontSize: "clamp(2rem, 4vw, 3rem)",
               fontWeight: 700,
-<<<<<<< HEAD
               color: "#e8eaf6",
-=======
-              color: "var(--foreground)",
->>>>>>> main
             }}
           >
             Professional{" "}
@@ -104,11 +96,7 @@ export function Experience() {
               <div className="text-3xl font-bold mb-1" style={{ fontFamily: "var(--font-display)", color }}>
                 {value}
               </div>
-<<<<<<< HEAD
               <div className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "#8892b0" }}>
-=======
-              <div className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}>
->>>>>>> main
                 {label}
               </div>
             </div>
@@ -135,11 +123,7 @@ export function Experience() {
                 <div
                   className="absolute left-3 md:left-1/2 md:-translate-x-1/2 top-5 w-7 h-7 rounded-full flex items-center justify-center border-2"
                   style={{
-<<<<<<< HEAD
                     background: "#080c26",
-=======
-                    background: "var(--navy)",
->>>>>>> main
                     borderColor: item.color,
                     boxShadow: `0 0 12px ${item.color}50`,
                     zIndex: 1,
@@ -161,21 +145,13 @@ export function Experience() {
                   <span className="text-xs mb-2 block" style={{ fontFamily: "var(--font-mono)", color: item.color }}>
                     {item.date}
                   </span>
-<<<<<<< HEAD
                   <h3 className="mb-1" style={{ fontFamily: "var(--font-display)", color: "#e8eaf6", fontWeight: 600, fontSize: "1rem" }}>
-=======
-                  <h3 className="mb-1" style={{ fontFamily: "var(--font-display)", color: "var(--foreground)", fontWeight: 600, fontSize: "1rem" }}>
->>>>>>> main
                     {item.title}
                   </h3>
                   <p className="text-xs mb-2" style={{ fontFamily: "var(--font-body)", color: item.color, opacity: 0.8 }}>
                     {item.org}
                   </p>
-<<<<<<< HEAD
                   <p className="text-sm leading-relaxed mb-3" style={{ color: "#8892b0", fontFamily: "var(--font-body)" }}>
-=======
-                  <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}>
->>>>>>> main
                     {item.desc}
                   </p>
                   <div className="flex flex-wrap gap-2">
