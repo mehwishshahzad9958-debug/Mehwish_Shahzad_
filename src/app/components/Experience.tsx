@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useInView } from "../hooks/useInView";
-import { BarChart3, Bot, Briefcase } from "lucide-react";
+import { BarChart3, BookOpen, Bot, Briefcase, HandHelpingIcon, Target } from "lucide-react";
 
 const timeline = [
   {
@@ -10,7 +10,7 @@ const timeline = [
     title: "Project Lead",
     date: "Dec 2024 - Feb 2026",
     desc: "Led engineers and coordinated stakeholders across Pan-India operations, monitoring KPIs to keep delivery on track driving a 5% data-accuracy gain within 2 months through improved reporting and process automation.",
-    highlights: ["Stakeholder reporting", "RCA", "Process coordination", "Business requirements","Technical models"],
+    highlights: ["Stakeholder reporting", "RCA", "Process coordination", "Business requirements","Technical models","SNMP","Grafana"],
   },
   {
     icon: BarChart3,
@@ -22,14 +22,22 @@ const timeline = [
     highlights: ["Machine learning", "Data workflows", "Analytical problem solving"],
   },
   {
-    icon: Bot,
+    icon: Target,
     color: "#00e5ff",
-    company: "CCE-PMT",
     date: "1 Year- 2021",
     title: "Junior Project Manager",
-    org: "Portfolio Focus",
+    org: "CCE-PMT",
     desc: "Drove admission conversion from 40% to 80%, generating ₹20 lakh in monthly revenue through data-driven enrollment strategy and performance tracking.",
     highlights: ["Enrollment Strategy", " Performance Optimization", "Employ Trainning","Management Skills"],
+  },
+    {
+    icon: BookOpen,
+    color: "#059669",
+    date: "2 Months- 2020",
+    title: "Volunteer Project Manager",
+    org: "Miles2Smile Foundation",
+    desc: "We built a flexible education framework that treats every student’s learning path as unique. By organizing students by their current proficiency rather than their grade level, We've enabled them to tackle complex subjects at their own pace and take pride in helping their peers succeed.",
+    highlights: ["Strategic Planning", "Problem Solving", "Innovation","Process Design"],
   },
 ];
 
