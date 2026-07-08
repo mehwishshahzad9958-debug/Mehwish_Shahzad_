@@ -6,10 +6,10 @@ const timeline = [
   {
     icon: Briefcase,
     color: "#2979ff",
-    date: "Dec 2024 - Present",
-    title: "DCEM Operations Lead",
     org: "Indus Towers",
-    desc: "Coordinate DC Energy Meter operations with structured tracking, stakeholder updates, and reporting workflows. The role centers on visibility, follow-up discipline, and operational issue resolution.",
+    title: "Project Lead",
+    date: "Dec 2024 - Feb 2026",
+    desc: "Led engineers and coordinated stakeholders across Pan-India operations, monitoring KPIs to keep delivery on track driving a 5% data-accuracy gain within 2 months through improved reporting and process automation.",
     highlights: ["DCEM operations", "Stakeholder reporting", "Issue tracking", "Process coordination"],
   },
   {
@@ -18,7 +18,7 @@ const timeline = [
     date: "Internship",
     title: "Machine Learning Intern",
     org: "Atharvo India Pvt. Ltd.",
-    desc: "Worked in a machine-learning internship environment, strengthening data handling, analytical thinking, and model-aware problem solving for practical business contexts.",
+    desc: "Python, Pandas, NumPy, scikit-learn, and Matplotlib to analyze and visualize data, building predictive models to forecast trends and optimize decision-making processes.",
     highlights: ["Machine learning", "Data workflows", "Analytical problem solving"],
   },
   {
@@ -76,8 +76,7 @@ export function Experience() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
-        >
+          className="grid grid-cols-1 gap-4 mb-16"        >
           {[
             { label: "Core Roles", value: "2", color: "#2979ff" },
             { label: "Tool Areas", value: "8", color: "#7c3aed" },

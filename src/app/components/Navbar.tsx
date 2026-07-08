@@ -6,6 +6,7 @@ const navLinks = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
+  { label: "Projects", href: "#projects" },
 ];
 
 interface NavbarProps {
@@ -60,13 +61,13 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-8 group"
         >
           <span
             className="text-xl font-bold tracking-tight"
             style={{
               fontFamily: "var(--font-display)",
-              background: "linear-gradient(135deg, #2979ff, #7c3aed)",
+              background: "linear-gradient(135deg, #0f49ad, #7c3aed)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}

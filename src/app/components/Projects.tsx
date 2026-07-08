@@ -6,9 +6,9 @@ import { useState } from "react";
 const projects = [
   {
     id: 1,
-    title: "DC Energy Meter Dashboard",
-    desc: "An end-to-end IoT solution for real-time DC power monitoring with live telemetry, threshold alerts, and historical analytics. Led the full project lifecycle as Project Manager.",
-    image: "https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?w=800&h=450&fit=crop&auto=format",
+    title: "Agile Project Portfolio Dashboard | Power BI",
+    desc: "Developed an executive-level Agile Project Portfolio Dashboard in Power BI to provide real-time visibility into project performance, portfolio health, budget utilization, and delivery progress. The dashboard transforms project data into actionable insights through interactive visualizations and dynamic reporting.",
+    image: "/assets/videos/PowerBI.mp4",
     tags: ["IoT", "Python", "React", "Project Management", "Agile"],
     color: "#2979ff",
     demo: "#",
