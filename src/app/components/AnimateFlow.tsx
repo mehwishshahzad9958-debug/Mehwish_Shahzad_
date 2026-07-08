@@ -17,26 +17,27 @@ const clamp = (n: number, min: number, max: number) => Math.max(min, Math.min(ma
 export default function Animate() {
   const [mode, setMode] = useState<"consuming" | "creating">("consuming");
   const [tick, setTick] = useState(0);
+  const [activeTool, setActiveTool] = useState<string | null>(null);
 
   const nodes: SocialNode[] = useMemo(
     () =>
       [
-        { id: "asana", label: "Asana", shortLabel: "Asana", glow: "#fb7185" },
-        { id: "bootstrap", label: "Bootstrap", shortLabel: "Bootstrap", glow: "#a78bfa" },
-        { id: "claude", label: "Claude", shortLabel: "Claude", glow: "#f59e0b" },
-        { id: "clickup", label: "ClickUp", shortLabel: "ClickUp", glow: "#38bdf8" },
-        { id: "codex", label: "Codex", shortLabel: "Codex", glow: "#60a5fa" },
-        { id: "confluence", label: "Confluence", shortLabel: "Confluence", glow: "#22d3ee" },
-        { id: "expogo", label: "Expo Go", shortLabel: "Expo", glow: "#f87171" },
-        { id: "figma", label: "Figma", shortLabel: "Figma", glow: "#f97316" },
-        { id: "gemini", label: "Gemini", shortLabel: "Gemini", glow: "#22c55e" },
-        { id: "github", label: "GitHub", shortLabel: "GitHub", glow: "#cbd5e1" },
-        { id: "lucid", label: "Lucidchart", shortLabel: "Lucid", glow: "#fbbf24" },
-        { id: "notion", label: "Notion", shortLabel: "Notion", glow: "#e5e7eb" },
-        { id: "powerbi", label: "Power BI", shortLabel: "Power BI", glow: "#facc15" },
-        { id: "relay", label: "Relay", shortLabel: "Relay", glow: "#fda4af" },
+        { id: "asana", label: "Asana", shortLabel: "Asana", glow: "#ff6b9a" },
+        { id: "bootstrap", label: "Bootstrap", shortLabel: "Bootstrap", glow: "#9d6cff" },
+        { id: "claude", label: "Claude", shortLabel: "Claude", glow: "#ffb454" },
+        { id: "clickup", label: "ClickUp", shortLabel: "ClickUp", glow: "#00e5ff" },
+        { id: "codex", label: "Codex", shortLabel: "Codex", glow: "#4f9aff" },
+        { id: "confluence", label: "Confluence", shortLabel: "Confluence", glow: "#5eead4" },
+        { id: "expogo", label: "Expo Go", shortLabel: "Expo", glow: "#ff7a90" },
+        { id: "figma", label: "Figma", shortLabel: "Figma", glow: "#ff8a3d" },
+        { id: "gemini", label: "Gemini", shortLabel: "Gemini", glow: "#4ade80" },
+        { id: "github", label: "GitHub", shortLabel: "GitHub", glow: "#d8e3f8" },
+        { id: "lucid", label: "Lucidchart", shortLabel: "Lucid", glow: "#ffd166" },
+        { id: "notion", label: "Notion", shortLabel: "Notion", glow: "#f8fafc" },
+        { id: "powerbi", label: "Power BI", shortLabel: "Power BI", glow: "#f9d65c" },
+        { id: "relay", label: "Relay", shortLabel: "Relay", glow: "#f0abfc" },
         { id: "tableau", label: "Tableau", shortLabel: "Tableau", glow: "#7dd3fc" },
-        { id: "visio", label: "Visio", shortLabel: "Visio", glow: "#818cf8" },
+        { id: "visio", label: "Visio", shortLabel: "Visio", glow: "#8da2ff" },
       ] as SocialNode[],
     []
   );
@@ -44,6 +45,9 @@ export default function Animate() {
   const displayed = nodes;
 
   const direction: FlowDirection = mode === "consuming" ? "down" : "up";
+  const flowColor = mode === "consuming" ? "#ff8a7a" : "#00e5ff";
+  const pulseColor = mode === "consuming" ? "#ffd166" : "#5eead4";
+  const accentColor = mode === "consuming" ? "#ff6b9a" : "#4f9aff";
 
   const onToggle = () => {
     setMode((m) => (m === "consuming" ? "creating" : "consuming"));
@@ -51,7 +55,7 @@ export default function Animate() {
   };
 
   // Layout constants (vector-ish)
-  const WIDTH = 900;
+  const WIDTH = 960;
   const HEIGHT = 560;
   const centerX = WIDTH / 2;
   const personY = 292;
@@ -60,22 +64,22 @@ export default function Animate() {
   // Keep all tools readable by distributing them around the central figure.
   const logoPositions = useMemo(() => {
     const positions = [
-      [165, 70],
-      [355, 56],
-      [545, 56],
-      [735, 70],
-      [96, 158],
-      [96, 238],
-      [96, 318],
-      [96, 398],
-      [804, 158],
-      [804, 238],
-      [804, 318],
-      [804, 398],
-      [165, 490],
-      [355, 504],
-      [545, 504],
-      [735, 490],
+      [172, 70],
+      [377, 56],
+      [583, 56],
+      [788, 70],
+      [104, 158],
+      [104, 238],
+      [104, 318],
+      [104, 398],
+      [856, 158],
+      [856, 238],
+      [856, 318],
+      [856, 398],
+      [172, 490],
+      [377, 504],
+      [583, 504],
+      [788, 490],
     ];
 
     return displayed.map((n, i) => {
@@ -131,7 +135,7 @@ export default function Animate() {
     >
       <svg
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-        width="min(980px, 100%)"
+        width="min(1040px, 100%)"
         height="auto"
         role="img"
         aria-label="You social consuming/creating flow animation"
@@ -156,14 +160,16 @@ export default function Animate() {
             </feMerge>
           </filter>
 
-          <linearGradient id="dollarGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#22c55e" />
-            <stop offset="100%" stopColor="#16a34a" />
+          <linearGradient id="badgeSurface" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="rgba(79,154,255,0.24)" />
+            <stop offset="52%" stopColor="rgba(13,17,48,0.82)" />
+            <stop offset="100%" stopColor="rgba(0,229,255,0.12)" />
           </linearGradient>
 
-          <linearGradient id="dollarGradCons" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#ef4444" />
-            <stop offset="100%" stopColor="#dc2626" />
+          <linearGradient id="centerScreen" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="rgba(79,154,255,0.34)" />
+            <stop offset="50%" stopColor="rgba(10,15,46,0.96)" />
+            <stop offset="100%" stopColor="rgba(157,108,255,0.3)" />
           </linearGradient>
 
           {/* Invisible paths for motion */}
@@ -191,15 +197,15 @@ export default function Animate() {
               key={fp.id}
               d={fp.d}
               fill="none"
-              stroke={mode === "consuming" ? "#fca5a5" : "#86efac"}
-              strokeOpacity={0.28}
+              stroke={activeTool === fp.id ? pulseColor : flowColor}
+              strokeOpacity={activeTool === fp.id ? 0.72 : 0.34}
               strokeWidth={1.25}
-              strokeDasharray="5 10"
+              strokeDasharray={activeTool === fp.id ? "9 7" : "5 10"}
               initial={{ strokeDashoffset: 0 }}
               animate={{
                 strokeDashoffset: direction === "down" ? -40 : 40,
               }}
-              transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: activeTool === fp.id ? 0.85 : 1.25, repeat: Infinity, ease: "linear" }}
               filter="url(#glowWhite)"
             />
           ))}
@@ -210,44 +216,94 @@ export default function Animate() {
           {logoPositions.map((p) => {
             const isGreen = mode === "creating";
             const stroke = p.glow;
+            const highlighted = activeTool === p.id;
             return (
-              <g key={p.id} transform={`translate(${p.x}, ${p.y})`}>
+              <g
+                key={p.id}
+                transform={`translate(${p.x}, ${p.y})`}
+                tabIndex={0}
+                role="button"
+                aria-label={`${p.label} tool`}
+                onMouseEnter={() => setActiveTool(p.id)}
+                onMouseLeave={() => setActiveTool(null)}
+                onFocus={() => setActiveTool(p.id)}
+                onBlur={() => setActiveTool(null)}
+                onClick={() => setActiveTool((current) => (current === p.id ? null : p.id))}
+                style={{ cursor: "pointer", outline: "none" }}
+              >
                 {/* glow halo */}
-                <circle r={22} cx={0} cy={0} fill={stroke} opacity={0.07} filter="url(#glowNeon)" />
+                <motion.circle
+                  r={highlighted ? 30 : 22}
+                  cx={0}
+                  cy={0}
+                  fill={stroke}
+                  opacity={highlighted ? 0.18 : 0.07}
+                  filter="url(#glowNeon)"
+                  animate={{ r: highlighted ? [24, 31, 24] : 22 }}
+                  transition={{ duration: 1.2, repeat: highlighted ? Infinity : 0, ease: "easeInOut" }}
+                />
 
                 {/* badge */}
-                <rect
-                  x={-60}
-                  y={-19}
-                  width={120}
-                  height={38}
+                <motion.rect
+                  x={-72}
+                  y={-21}
+                  width={144}
+                  height={42}
                   rx={7}
-                  fill="rgba(13, 17, 48, 0.68)"
+                  fill={highlighted ? "url(#badgeSurface)" : "rgba(13, 17, 48, 0.72)"}
                   stroke={stroke}
-                  strokeWidth={1.45}
-                  opacity={0.98}
+                  strokeWidth={highlighted ? 2.25 : 1.45}
+                  opacity={highlighted ? 1 : 0.98}
+                  animate={{ y: highlighted ? -22 : -19 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 20 }}
                 />
 
                 {/* tiny dot bullet */}
-                <circle cx={-47} cy={0} r={4} fill={stroke} opacity={0.95} filter="url(#glowNeon)" />
+                <motion.circle
+                  cx={-58}
+                  cy={0}
+                  r={highlighted ? 5.5 : 4}
+                  fill={stroke}
+                  opacity={0.95}
+                  filter="url(#glowNeon)"
+                  animate={{ opacity: highlighted ? [0.75, 1, 0.75] : 0.95 }}
+                  transition={{ duration: 0.9, repeat: highlighted ? Infinity : 0 }}
+                />
 
                 {/* label */}
                 <text
-                  x={5}
-                  y={5}
-                  fontSize={p.label.length > 10 ? 11 : 12}
-                  fontWeight={800}
+                  x={6}
+                  y={1}
+                  fontSize={p.label.length > 10 ? 12 : 13}
+                  fontWeight={900}
                   textAnchor="middle"
+                  dominantBaseline="middle"
                   fontFamily="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
-                  fill="#fff"
+                  fill="#ffffff"
+                  stroke="rgba(5, 7, 26, 0.9)"
+                  strokeWidth={3}
+                  paintOrder="stroke fill"
                   opacity={1}
-                  style={{ letterSpacing: 0 }}
+                  style={{
+                    letterSpacing: 0,
+                    textShadow: `0 0 10px ${stroke}`,
+                  }}
                 >
                   {p.label}
                 </text>
 
                 {/* extra neon line */}
-                <line x1={-50} y1={13} x2={50} y2={13} stroke={isGreen ? "#22c55e" : "#ef4444"} strokeWidth={1.2} opacity={0.65} />
+                <motion.line
+                  x1={-60}
+                  y1={13}
+                  x2={60}
+                  y2={13}
+                  stroke={isGreen ? "#00e5ff" : "#ff8a7a"}
+                  strokeWidth={highlighted ? 1.8 : 1.2}
+                  opacity={highlighted ? 0.95 : 0.65}
+                  animate={{ x1: highlighted ? -64 : -60, x2: highlighted ? 64 : 60 }}
+                  transition={{ duration: 0.25 }}
+                />
               </g>
             );
           })}
@@ -286,13 +342,21 @@ export default function Animate() {
             width={116}
             height={48}
             rx={6}
-            fill="rgba(10,10,18,0.92)"
-            stroke={mode === "consuming" ? "#ef4444" : "#22c55e"}
+            fill="url(#centerScreen)"
+            stroke={accentColor}
             strokeWidth={2}
             filter="url(#glowNeon)"
           />
           <line x1={-44} y1={56} x2={44} y2={56} stroke="#fff" strokeWidth={2.2} opacity={0.75} />
-          <circle cx={0} cy={32} r={4} fill={mode === "consuming" ? "#ef4444" : "#22c55e"} filter="url(#glowNeon)" />
+          <motion.circle
+            cx={0}
+            cy={32}
+            r={4}
+            fill={pulseColor}
+            filter="url(#glowNeon)"
+            animate={{ r: [4, 6, 4], opacity: [0.7, 1, 0.7] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+          />
 
           <text
             x={0}
@@ -309,47 +373,37 @@ export default function Animate() {
           </text>
         </g>
 
-        {/* Dollar particles flowing along curves */}
+        {/* Data pulses flowing along curves */}
         <g>
           {particles.map((pt) => {
             const p = logoPositions[pt.pathIndex];
             if (!p) return null;
-
-            const isConsuming = mode === "consuming";
 
             const start = clamp(pt.startOffset, 0, 1);
             const duration = 2.0 + (pt.pathIndex % 2) * 0.35 + (pt.id.length % 3) * 0.1;
 
             const reverse = direction === "up";
             const key = `${pt.id}-${tick}-${mode}`;
+            const highlighted = activeTool === p.id;
 
             return (
-              <text
+              <g
                 key={key}
-                fontSize={20}
-                fontWeight={900}
-                fontFamily="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
-                fill={isConsuming ? "#ef4444" : "#22c55e"}
-                opacity={0.95}
+                opacity={highlighted ? 1 : 0.82}
                 filter="url(#glowNeon)"
-                style={{
-                  textShadow: `0 0 12px ${isConsuming ? "rgba(239,68,68,0.55)" : "rgba(34,197,94,0.55)"}`,
-                  letterSpacing: 0,
-                }}
-                textAnchor="middle"
-                dominantBaseline="middle"
               >
-                $
+                <circle r={highlighted ? 6 : 4.5} fill={highlighted ? pulseColor : flowColor} />
+                <path d="M -2.5 -5 L 5 0 L -2.5 5 Z" fill="#ffffff" opacity={0.9} />
                 <animate
                   attributeName="opacity"
-                  values="0;1;1;0"
+                  values="0;1;0.86;0"
                   keyTimes="0;0.18;0.82;1"
-                  dur={`${duration}s`}
+                  dur={`${highlighted ? duration * 0.72 : duration}s`}
                   begin={`${pt.delay + start * 0.45}s`}
                   repeatCount="indefinite"
                 />
                 <animateMotion
-                  dur={`${duration}s`}
+                  dur={`${highlighted ? duration * 0.72 : duration}s`}
                   begin={`${pt.delay + start * 0.45}s`}
                   repeatCount="indefinite"
                   rotate="auto"
@@ -359,7 +413,7 @@ export default function Animate() {
                 >
                   <mpath href={`#path-${p.id}`} />
                 </animateMotion>
-              </text>
+              </g>
             );
           })}
         </g>
@@ -373,7 +427,7 @@ export default function Animate() {
                 width: "100%",
                 borderRadius: 999,
                 border: "1px solid rgba(255,255,255,0.18)",
-                background: "rgba(255,255,255,0.04)",
+                background: "linear-gradient(135deg, rgba(79,154,255,0.18), rgba(157,108,255,0.14))",
                 color: "#fff",
                 padding: "12px 16px",
                 display: "flex",
@@ -388,7 +442,7 @@ export default function Animate() {
                 style={{
                   fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
                   fontSize: 13,
-                  color: mode === "consuming" ? "#ef4444" : "#22c55e",
+                  color: mode === "consuming" ? "#ffd166" : "#5eead4",
                   fontWeight: 800,
                   letterSpacing: 0,
                 }}
@@ -421,11 +475,11 @@ export default function Animate() {
                     width: 18,
                     height: 18,
                     borderRadius: "999px",
-                    background: mode === "consuming" ? "#ef4444" : "#22c55e",
+                    background: mode === "consuming" ? "#ffd166" : "#5eead4",
                     boxShadow:
                       mode === "consuming"
-                        ? "0 0 14px rgba(239,68,68,0.55)"
-                        : "0 0 14px rgba(34,197,94,0.55)",
+                        ? "0 0 14px rgba(255,209,102,0.58)"
+                        : "0 0 14px rgba(94,234,212,0.58)",
                   }}
                   animate={{ x: mode === "consuming" ? 0 : 14 }}
                   transition={{ type: "spring", stiffness: 260, damping: 18 }}
