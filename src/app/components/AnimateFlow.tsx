@@ -160,6 +160,14 @@ export default function Animate() {
             </feMerge>
           </filter>
 
+          <filter id="labelGlow" x="-35%" y="-80%" width="170%" height="260%">
+            <feGaussianBlur stdDeviation="1.15" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
           <linearGradient id="badgeSurface" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="rgba(79,154,255,0.24)" />
             <stop offset="52%" stopColor="rgba(13,17,48,0.82)" />
@@ -237,7 +245,7 @@ export default function Animate() {
                   cx={0}
                   cy={0}
                   fill={stroke}
-                  opacity={highlighted ? 0.18 : 0.07}
+                  opacity={highlighted ? 0.12 : 0.045}
                   filter="url(#glowNeon)"
                   animate={{ r: highlighted ? [24, 31, 24] : 22 }}
                   transition={{ duration: 1.2, repeat: highlighted ? Infinity : 0, ease: "easeInOut" }}
@@ -250,7 +258,7 @@ export default function Animate() {
                   width={144}
                   height={42}
                   rx={7}
-                  fill={highlighted ? "url(#badgeSurface)" : "rgba(13, 17, 48, 0.72)"}
+                  fill={highlighted ? "url(#badgeSurface)" : "rgba(8, 12, 32, 0.88)"}
                   stroke={stroke}
                   strokeWidth={highlighted ? 2.25 : 1.45}
                   opacity={highlighted ? 1 : 0.98}
@@ -270,7 +278,24 @@ export default function Animate() {
                   transition={{ duration: 0.9, repeat: highlighted ? Infinity : 0 }}
                 />
 
-                {/* label */}
+                {/* controlled label glow */}
+                <text
+                  x={6}
+                  y={1}
+                  fontSize={p.label.length > 10 ? 12 : 13}
+                  fontWeight={900}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fontFamily="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
+                  fill={stroke}
+                  opacity={highlighted ? 0.34 : 0.18}
+                  filter="url(#labelGlow)"
+                  style={{ letterSpacing: 0 }}
+                >
+                  {p.label}
+                </text>
+
+                {/* sharp label */}
                 <text
                   x={6}
                   y={1}
@@ -280,14 +305,11 @@ export default function Animate() {
                   dominantBaseline="middle"
                   fontFamily="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
                   fill="#ffffff"
-                  stroke="rgba(5, 7, 26, 0.9)"
-                  strokeWidth={3}
+                  stroke="rgba(3, 6, 20, 0.95)"
+                  strokeWidth={2.2}
                   paintOrder="stroke fill"
                   opacity={1}
-                  style={{
-                    letterSpacing: 0,
-                    textShadow: `0 0 10px ${stroke}`,
-                  }}
+                  style={{ letterSpacing: 0 }}
                 >
                   {p.label}
                 </text>
