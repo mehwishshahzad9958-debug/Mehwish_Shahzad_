@@ -6,6 +6,12 @@ import {
   Bot,
   Target,
 } from "lucide-react";
+interface TimelineItem {
+  period: string;
+  role: string;
+  company: string;
+  description: string;
+}
 
 const strengths = [
   {
@@ -24,29 +30,7 @@ const strengths = [
   }
 ];
 
-const timeline = [
-  {
-    period: "Dec 2024 – Feb 2026",
-    role: "Project Lead",
-    company: "Indus Towers",
-    description:
-      "Led engineers and coordinated stakeholders across Pan-India operations, monitoring KPIs to keep delivery on track driving a 5% data-accuracy gain within 2 months through improved reporting and process automation.",
-  },
-  {
-    period: "2024-Internship",
-    role: "Machine Learning Intern",
-    company: "Atharvo India Pvt. Ltd.",
-    description:
-    "Python, Pandas, NumPy, scikit-learn, and Matplotlib to analyze and visualize data, building predictive models to forecast trends and optimize decision-making processes.",
-  },
-  {
-    period: "1 Year- 2021",
-    role: "Junior Project Manager",
-    company: "CCE-PMT",
-    description:
-      "Drove admission conversion from 40% to 80%, generating ₹20 lakh in monthly revenue through data-driven enrollment strategy and performance tracking.",
-  },
-];
+const timeline: TimelineItem[] = [];
 
 export function About() {
   const { ref, inView } = useInView(0.15);

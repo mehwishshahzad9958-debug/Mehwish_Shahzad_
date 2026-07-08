@@ -8,7 +8,7 @@ const projects = [
     id: 1,
     title: "Agile Project Portfolio Dashboard | Power BI",
     desc: "Developed an executive-level Agile Project Portfolio Dashboard in Power BI to provide real-time visibility into project performance, portfolio health, budget utilization, and delivery progress. The dashboard transforms project data into actionable insights through interactive visualizations and dynamic reporting.",
-    image: "/assets/videos/PowerBI.mp4",
+    Video: "src/assets/videos/PowerBI.mp4",
     tags: ["IoT", "Python", "React", "Project Management", "Agile"],
     color: "#2979ff",
     demo: "#",

@@ -10,12 +10,12 @@ const timeline = [
     title: "Project Lead",
     date: "Dec 2024 - Feb 2026",
     desc: "Led engineers and coordinated stakeholders across Pan-India operations, monitoring KPIs to keep delivery on track driving a 5% data-accuracy gain within 2 months through improved reporting and process automation.",
-    highlights: ["DCEM operations", "Stakeholder reporting", "Issue tracking", "Process coordination"],
+    highlights: ["Stakeholder reporting", "RCA", "Process coordination", "Business requirements","Technical models"],
   },
   {
     icon: BarChart3,
     color: "#7c3aed",
-    date: "Internship",
+    date: "2024-Internship",
     title: "Machine Learning Intern",
     org: "Atharvo India Pvt. Ltd.",
     desc: "Python, Pandas, NumPy, scikit-learn, and Matplotlib to analyze and visualize data, building predictive models to forecast trends and optimize decision-making processes.",
@@ -24,11 +24,12 @@ const timeline = [
   {
     icon: Bot,
     color: "#00e5ff",
-    date: "Current Direction",
-    title: "AI-Powered Product Operations",
+    company: "CCE-PMT",
+    date: "1 Year- 2021",
+    title: "Junior Project Manager",
     org: "Portfolio Focus",
-    desc: "Building a career path around analytics, project tooling, and prompt engineering to improve how product and operations teams plan, report, and execute.",
-    highlights: ["Prompt engineering", "Power BI", "Jira", "Confluence"],
+    desc: "Drove admission conversion from 40% to 80%, generating ₹20 lakh in monthly revenue through data-driven enrollment strategy and performance tracking.",
+    highlights: ["Enrollment Strategy", " Performance Optimization", "Employ Trainning","Management Skills"],
   },
 ];
 
@@ -70,36 +71,6 @@ export function Experience() {
               Experience
             </span>
           </h2>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-1 gap-4 mb-16"        >
-          {[
-            { label: "Core Roles", value: "2", color: "#2979ff" },
-            { label: "Tool Areas", value: "8", color: "#7c3aed" },
-            { label: "Primary Focus", value: "DCEM", color: "#00e5ff" },
-            { label: "Direction", value: "AI Ops", color: "#a78bfa" },
-          ].map(({ label, value, color }) => (
-            <div
-              key={label}
-              className="p-5 rounded-2xl border text-center"
-              style={{
-                background: "var(--glass)",
-                borderColor: color + "30",
-                backdropFilter: "blur(12px)",
-              }}
-            >
-              <div className="text-3xl font-bold mb-1" style={{ fontFamily: "var(--font-display)", color }}>
-                {value}
-              </div>
-              <div className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "#8892b0" }}>
-                {label}
-              </div>
-            </div>
-          ))}
         </motion.div>
 
         <div className="relative">
