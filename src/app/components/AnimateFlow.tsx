@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "motion/react";
 
 type FlowDirection = "down" | "up";
@@ -18,6 +18,8 @@ export default function Animate() {
   const [mode, setMode] = useState<"consuming" | "creating">("consuming");
   const [tick, setTick] = useState(0);
   const [activeTool, setActiveTool] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const nodes: SocialNode[] = useMemo(
     () =>
@@ -44,10 +46,42 @@ export default function Animate() {
 
   const displayed = nodes;
 
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 700px)");
+    const updateLayout = () => setIsMobile(query.matches);
+
+    updateLayout();
+    query.addEventListener("change", updateLayout);
+
+    return () => query.removeEventListener("change", updateLayout);
+  }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const updateTheme = () => setIsDarkMode(root.classList.contains("dark"));
+    const observer = new MutationObserver(updateTheme);
+
+    updateTheme();
+    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+
+    return () => observer.disconnect();
+  }, []);
+
   const direction: FlowDirection = mode === "consuming" ? "down" : "up";
-  const flowColor = mode === "consuming" ? "#ff8a7a" : "#00e5ff";
-  const pulseColor = mode === "consuming" ? "#ffd166" : "#5eead4";
-  const accentColor = mode === "consuming" ? "#ff6b9a" : "#4f9aff";
+  const flowColor = mode === "consuming" ? (isDarkMode ? "#ff8a7a" : "#d94627") : isDarkMode ? "#00e5ff" : "#0f76ad";
+  const pulseColor = mode === "consuming" ? (isDarkMode ? "#ffd166" : "#b45309") : isDarkMode ? "#5eead4" : "#047857";
+  const accentColor = mode === "consuming" ? (isDarkMode ? "#ff6b9a" : "#be185d") : isDarkMode ? "#4f9aff" : "#1d4ed8";
+  const gridColor = isDarkMode ? "#223047" : "#b8c4df";
+  const labelFill = isDarkMode ? "#ffffff" : "#0d1130";
+  const labelStroke = isDarkMode ? "rgba(3, 6, 20, 0.95)" : "rgba(255, 255, 255, 0.94)";
+  const badgeFill = isDarkMode ? "rgba(8, 12, 32, 0.88)" : "rgba(255, 255, 255, 0.86)";
+  const personStroke = isDarkMode ? "#ffffff" : "#172554";
+  const personFill = isDarkMode ? "rgba(255,255,255,0.08)" : "rgba(29,78,216,0.08)";
+  const mutedText = isDarkMode ? "#d4d4d8" : "#334155";
+  const buttonBorder = isDarkMode ? "rgba(255,255,255,0.18)" : "rgba(29,78,216,0.22)";
+  const buttonBackground = isDarkMode
+    ? "linear-gradient(135deg, rgba(79,154,255,0.18), rgba(157,108,255,0.14))"
+    : "linear-gradient(135deg, rgba(255,255,255,0.82), rgba(226,232,248,0.74))";
 
   const onToggle = () => {
     setMode((m) => (m === "consuming" ? "creating" : "consuming"));
@@ -55,15 +89,24 @@ export default function Animate() {
   };
 
   // Layout constants (vector-ish)
-  const WIDTH = 960;
-  const HEIGHT = 560;
+  const WIDTH = isMobile ? 420 : 960;
+  const HEIGHT = isMobile ? 760 : 560;
   const centerX = WIDTH / 2;
-  const personY = 292;
-  const personFlowY = personY - 52;
+  const personY = isMobile ? 360 : 292;
+  const personFlowY = personY - (isMobile ? 46 : 52);
+  const badgeHalfWidth = isMobile ? 64 : 72;
+  const badgeWidth = badgeHalfWidth * 2;
+  const badgeHeight = isMobile ? 38 : 42;
+  const badgeY = -badgeHeight / 2;
+  const dotX = isMobile ? -50 : -58;
+  const labelFontSize = (label: string) => {
+    if (isMobile) return label.length > 10 ? 10.5 : label.length > 8 ? 11 : 12;
+    return label.length > 10 ? 12 : 13;
+  };
 
   // Keep all tools readable by distributing them around the central figure.
   const logoPositions = useMemo(() => {
-    const positions = [
+    const desktopPositions = [
       [172, 70],
       [377, 56],
       [583, 56],
@@ -81,12 +124,18 @@ export default function Animate() {
       [583, 504],
       [788, 490],
     ];
+    const mobilePositions = displayed.map((_, i) => {
+      const column = i % 2;
+      const row = Math.floor(i / 2);
+      return [column === 0 ? 80 : 340, 64 + row * 80];
+    });
+    const positions = isMobile ? mobilePositions : desktopPositions;
 
     return displayed.map((n, i) => {
       const [x, y] = positions[i] ?? [centerX, 80];
       return { ...n, x, y };
     });
-  }, [displayed]);
+  }, [centerX, displayed, isMobile]);
 
   const flowPaths = useMemo(() => {
     // Create four dashed lines from each logo to the person.
@@ -129,18 +178,18 @@ export default function Animate() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "20px 0",
+        padding: isMobile ? "12px 0" : "20px 0",
         overflow: "hidden",
       }}
     >
       <svg
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-        width="min(1040px, 100%)"
+        width={isMobile ? "min(430px, 100%)" : "min(1040px, 100%)"}
         height="auto"
         role="img"
         aria-label="You social consuming/creating flow animation"
         style={{
-          filter: "drop-shadow(0 0 10px rgba(255,255,255,0.06))",
+          filter: isDarkMode ? "drop-shadow(0 0 10px rgba(255,255,255,0.06))" : "drop-shadow(0 12px 28px rgba(29,78,216,0.10))",
         }}
       >
         <defs>
@@ -169,15 +218,15 @@ export default function Animate() {
           </filter>
 
           <linearGradient id="badgeSurface" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="rgba(79,154,255,0.24)" />
-            <stop offset="52%" stopColor="rgba(13,17,48,0.82)" />
-            <stop offset="100%" stopColor="rgba(0,229,255,0.12)" />
+            <stop offset="0%" stopColor={isDarkMode ? "rgba(79,154,255,0.24)" : "rgba(255,255,255,0.96)"} />
+            <stop offset="52%" stopColor={isDarkMode ? "rgba(13,17,48,0.82)" : "rgba(240,244,255,0.92)"} />
+            <stop offset="100%" stopColor={isDarkMode ? "rgba(0,229,255,0.12)" : "rgba(79,154,255,0.16)"} />
           </linearGradient>
 
           <linearGradient id="centerScreen" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="rgba(79,154,255,0.34)" />
-            <stop offset="50%" stopColor="rgba(10,15,46,0.96)" />
-            <stop offset="100%" stopColor="rgba(157,108,255,0.3)" />
+            <stop offset="0%" stopColor={isDarkMode ? "rgba(79,154,255,0.34)" : "rgba(255,255,255,0.94)"} />
+            <stop offset="50%" stopColor={isDarkMode ? "rgba(10,15,46,0.96)" : "rgba(226,232,248,0.9)"} />
+            <stop offset="100%" stopColor={isDarkMode ? "rgba(157,108,255,0.3)" : "rgba(124,58,237,0.14)"} />
           </linearGradient>
 
           {/* Invisible paths for motion */}
@@ -188,13 +237,13 @@ export default function Animate() {
 
         {/* Background subtle grid */}
         <g opacity={0.18}>
-          {Array.from({ length: 22 }).map((_, i) => {
-            const x = 34 + i * 40;
-            return <line key={`gx-${i}`} x1={x} y1={10} x2={x} y2={HEIGHT - 10} stroke="#223047" strokeWidth={1} />;
+          {Array.from({ length: isMobile ? 10 : 22 }).map((_, i) => {
+            const x = 24 + i * 40;
+            return <line key={`gx-${i}`} x1={x} y1={10} x2={x} y2={HEIGHT - 10} stroke={gridColor} strokeWidth={1} />;
           })}
-          {Array.from({ length: 14 }).map((_, i) => {
+          {Array.from({ length: isMobile ? 19 : 14 }).map((_, i) => {
             const y = 24 + i * 38;
-            return <line key={`gy-${i}`} x1={16} y1={y} x2={WIDTH - 16} y2={y} stroke="#223047" strokeWidth={1} />;
+            return <line key={`gy-${i}`} x1={16} y1={y} x2={WIDTH - 16} y2={y} stroke={gridColor} strokeWidth={1} />;
           })}
         </g>
 
@@ -253,22 +302,22 @@ export default function Animate() {
 
                 {/* badge */}
                 <motion.rect
-                  x={-72}
-                  y={-21}
-                  width={144}
-                  height={42}
+                  x={-badgeHalfWidth}
+                  y={badgeY}
+                  width={badgeWidth}
+                  height={badgeHeight}
                   rx={7}
-                  fill={highlighted ? "url(#badgeSurface)" : "rgba(8, 12, 32, 0.88)"}
+                  fill={highlighted ? "url(#badgeSurface)" : badgeFill}
                   stroke={stroke}
                   strokeWidth={highlighted ? 2.25 : 1.45}
                   opacity={highlighted ? 1 : 0.98}
-                  animate={{ y: highlighted ? -22 : -19 }}
+                  animate={{ y: highlighted ? badgeY - 2 : badgeY }}
                   transition={{ type: "spring", stiffness: 260, damping: 20 }}
                 />
 
                 {/* tiny dot bullet */}
                 <motion.circle
-                  cx={-58}
+                  cx={dotX}
                   cy={0}
                   r={highlighted ? 5.5 : 4}
                   fill={stroke}
@@ -282,7 +331,7 @@ export default function Animate() {
                 <text
                   x={6}
                   y={1}
-                  fontSize={p.label.length > 10 ? 12 : 13}
+                  fontSize={labelFontSize(p.label)}
                   fontWeight={900}
                   textAnchor="middle"
                   dominantBaseline="middle"
@@ -299,13 +348,13 @@ export default function Animate() {
                 <text
                   x={6}
                   y={1}
-                  fontSize={p.label.length > 10 ? 12 : 13}
+                  fontSize={labelFontSize(p.label)}
                   fontWeight={900}
                   textAnchor="middle"
                   dominantBaseline="middle"
                   fontFamily="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
-                  fill="#ffffff"
-                  stroke="rgba(3, 6, 20, 0.95)"
+                  fill={labelFill}
+                  stroke={labelStroke}
                   strokeWidth={2.2}
                   paintOrder="stroke fill"
                   opacity={1}
@@ -317,13 +366,16 @@ export default function Animate() {
                 {/* extra neon line */}
                 <motion.line
                   x1={-60}
-                  y1={13}
+                  y1={isMobile ? 12 : 13}
                   x2={60}
-                  y2={13}
-                  stroke={isGreen ? "#00e5ff" : "#ff8a7a"}
+                  y2={isMobile ? 12 : 13}
+                  stroke={isGreen ? (isDarkMode ? "#00e5ff" : "#1d4ed8") : isDarkMode ? "#ff8a7a" : "#be185d"}
                   strokeWidth={highlighted ? 1.8 : 1.2}
                   opacity={highlighted ? 0.95 : 0.65}
-                  animate={{ x1: highlighted ? -64 : -60, x2: highlighted ? 64 : 60 }}
+                  animate={{
+                    x1: highlighted ? -badgeHalfWidth + 8 : -badgeHalfWidth + 12,
+                    x2: highlighted ? badgeHalfWidth - 8 : badgeHalfWidth - 12,
+                  }}
                   transition={{ duration: 0.25 }}
                 />
               </g>
@@ -332,21 +384,21 @@ export default function Animate() {
         </g>
 
         {/* Person: clearer figure at the center of the flow */}
-        <g transform={`translate(${centerX}, ${personY})`}>
-          <ellipse cx={0} cy={38} rx={76} ry={14} fill="rgba(255,255,255,0.07)" />
+        <g transform={`translate(${centerX}, ${personY}) scale(${isMobile ? 0.82 : 1})`}>
+          <ellipse cx={0} cy={38} rx={76} ry={14} fill={isDarkMode ? "rgba(255,255,255,0.07)" : "rgba(29,78,216,0.10)"} />
           <circle
             r={21}
             cx={0}
             cy={-58}
-            fill="rgba(255,255,255,0.08)"
-            stroke="#fff"
+            fill={personFill}
+            stroke={personStroke}
             strokeWidth={2.4}
             filter="url(#glowWhite)"
           />
           <path
             d="M -39 -8 C -34 -40, 34 -40, 39 -8 L 48 30 C 26 42, -26 42, -48 30 Z"
-            fill="rgba(255,255,255,0.055)"
-            stroke="#fff"
+            fill={isDarkMode ? "rgba(255,255,255,0.055)" : "rgba(255,255,255,0.62)"}
+            stroke={personStroke}
             strokeWidth={2.4}
             strokeLinejoin="round"
             filter="url(#glowWhite)"
@@ -354,7 +406,7 @@ export default function Animate() {
           <path
             d="M -26 -6 C -16 -18, -7 -18, 0 -8 C 7 -18, 16 -18, 26 -6"
             fill="none"
-            stroke="#fff"
+            stroke={personStroke}
             strokeWidth={2.2}
             opacity={0.9}
           />
@@ -369,7 +421,7 @@ export default function Animate() {
             strokeWidth={2}
             filter="url(#glowNeon)"
           />
-          <line x1={-44} y1={56} x2={44} y2={56} stroke="#fff" strokeWidth={2.2} opacity={0.75} />
+          <line x1={-44} y1={56} x2={44} y2={56} stroke={personStroke} strokeWidth={2.2} opacity={0.75} />
           <motion.circle
             cx={0}
             cy={32}
@@ -387,7 +439,7 @@ export default function Animate() {
             fontSize={16}
             fontWeight={800}
             fontFamily="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
-            fill="#fff"
+            fill={labelFill}
             opacity={1}
             style={{ letterSpacing: 0 }}
           >
@@ -415,7 +467,7 @@ export default function Animate() {
                 filter="url(#glowNeon)"
               >
                 <circle r={highlighted ? 6 : 4.5} fill={highlighted ? pulseColor : flowColor} />
-                <path d="M -2.5 -5 L 5 0 L -2.5 5 Z" fill="#ffffff" opacity={0.9} />
+                <path d="M -2.5 -5 L 5 0 L -2.5 5 Z" fill={isDarkMode ? "#ffffff" : "#0d1130"} opacity={0.9} />
                 <animate
                   attributeName="opacity"
                   values="0;1;0.86;0"
@@ -441,16 +493,16 @@ export default function Animate() {
         </g>
 
         {/* Toggle area */}
-        <foreignObject x={centerX - 104} y={386} width={208} height={58}>
+        <foreignObject x={centerX - 104} y={isMobile ? 656 : 386} width={208} height={58}>
           <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
             <button
               onClick={onToggle}
               style={{
                 width: "100%",
                 borderRadius: 999,
-                border: "1px solid rgba(255,255,255,0.18)",
-                background: "linear-gradient(135deg, rgba(79,154,255,0.18), rgba(157,108,255,0.14))",
-                color: "#fff",
+                border: `1px solid ${buttonBorder}`,
+                background: buttonBackground,
+                color: labelFill,
                 padding: "12px 16px",
                 display: "flex",
                 alignItems: "center",
@@ -478,8 +530,8 @@ export default function Animate() {
                   width: 36,
                   height: 22,
                   borderRadius: 999,
-                  background: "rgba(255,255,255,0.06)",
-                  border: "1px solid rgba(255,255,255,0.18)",
+                  background: isDarkMode ? "rgba(255,255,255,0.06)" : "rgba(29,78,216,0.08)",
+                  border: `1px solid ${buttonBorder}`,
                   position: "relative",
                   display: "inline-block",
                   flexShrink: 0,
@@ -514,12 +566,12 @@ export default function Animate() {
         {/* Subtle instruction */}
         <text
           x={centerX}
-          y={458}
+          y={isMobile ? 728 : 458}
           textAnchor="middle"
           fontSize={12}
           fontWeight={700}
           fontFamily="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
-          fill="#d4d4d8"
+          fill={mutedText}
           opacity={0.82}
         >
           toggle to reverse flow

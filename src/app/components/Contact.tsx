@@ -8,17 +8,48 @@ export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+    setError("");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    setSending(false);
-    setSubmitted(true);
+    setError("");
+
+    const payload = new FormData();
+    payload.append("name", form.name);
+    payload.append("email", form.email);
+    payload.append("_replyto", form.email);
+    payload.append("message", form.message);
+    payload.append("_subject", `New portfolio message from ${form.name}`);
+    payload.append("_template", "table");
+    payload.append("_honey", "");
+    payload.append("_captcha", "false");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/mehwishshahzad9958@gmail.com", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: payload,
+      });
+
+      if (!response.ok) {
+        throw new Error("Message delivery failed");
+      }
+
+      setSubmitted(true);
+      setForm({ name: "", email: "", message: "" });
+    } catch {
+      setError("Message could not be sent. Please try again or email me directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -47,7 +78,7 @@ export function Contact() {
               fontFamily: "var(--font-display)",
               fontSize: "clamp(2rem, 4vw, 3rem)",
               fontWeight: 700,
-              color: "#e8eaf6",
+              color: "var(--foreground)",
             }}
           >
             Let's Build Something{" "}
@@ -55,7 +86,7 @@ export function Contact() {
               Together
             </span>
           </h2>
-          <p className="max-w-xl mx-auto text-sm" style={{ color: "#8892b0", fontFamily: "var(--font-body)", lineHeight: 1.8 }}>
+          <p className="max-w-xl mx-auto text-sm" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)", lineHeight: 1.8 }}>
             Open to project coordination, data analyst, and AI-powered product operations opportunities all over India.
           </p>
         </motion.div>
@@ -77,7 +108,7 @@ export function Contact() {
             >
               <h3
                 className="mb-6"
-                style={{ fontFamily: "var(--font-display)", color: "#e8eaf6", fontWeight: 700, fontSize: "1.25rem" }}
+                style={{ fontFamily: "var(--font-display)", color: "var(--foreground)", fontWeight: 700, fontSize: "1.25rem" }}
               >
                 Get in Touch
               </h3>
@@ -97,7 +128,7 @@ export function Contact() {
                       <Icon size={16} style={{ color }} />
                     </div>
                     <div>
-                      <p className="text-xs mb-0.5" style={{ fontFamily: "var(--font-mono)", color: "#8892b0" }}>
+                      <p className="text-xs mb-0.5" style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}>
                         {label}
                       </p>
                       {href ? (
@@ -106,12 +137,12 @@ export function Contact() {
                           target={href.startsWith("http") ? "_blank" : undefined}
                           rel={href.startsWith("http") ? "noreferrer" : undefined}
                           className="text-sm hover:underline"
-                          style={{ fontFamily: "var(--font-body)", color: "#ccd6f6" }}
+                          style={{ fontFamily: "var(--font-body)", color: "var(--foreground)" }}
                         >
                           {value}
                         </a>
                       ) : (
-                        <p className="text-sm" style={{ fontFamily: "var(--font-body)", color: "#ccd6f6" }}>
+                        <p className="text-sm" style={{ fontFamily: "var(--font-body)", color: "var(--foreground)" }}>
                           {value}
                         </p>
                       )}
@@ -127,7 +158,7 @@ export function Contact() {
                 <p className="text-xs mb-1" style={{ fontFamily: "var(--font-mono)", color: "#2979ff" }}>
                   Availability
                 </p>
-                <p className="text-sm" style={{ fontFamily: "var(--font-body)", color: "#8892b0" }}>
+                <p className="text-sm" style={{ fontFamily: "var(--font-body)", color: "var(--muted-foreground)" }}>
                   Open to project coordination, data analyst, and AI-powered product operations roles all over India. Response within{" "}
                   <span style={{ color: "#4f9aff" }}>24 hours</span>.
                 </p>
@@ -149,11 +180,11 @@ export function Contact() {
                 <CheckCircle size={48} className="mb-4" style={{ color: "#22c55e" }} />
                 <h3
                   className="mb-2"
-                  style={{ fontFamily: "var(--font-display)", color: "#e8eaf6", fontWeight: 700, fontSize: "1.25rem" }}
+                  style={{ fontFamily: "var(--font-display)", color: "var(--foreground)", fontWeight: 700, fontSize: "1.25rem" }}
                 >
                   Message Sent!
                 </h3>
-                <p className="text-sm" style={{ color: "#8892b0", fontFamily: "var(--font-body)" }}>
+                <p className="text-sm" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}>
                   Thanks for reaching out. I'll get back to you within 24 hours.
                 </p>
               </div>
@@ -171,7 +202,7 @@ export function Contact() {
                     <div key={name}>
                       <label
                         className="block text-xs mb-2"
-                        style={{ fontFamily: "var(--font-mono)", color: "#8892b0" }}
+                        style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}
                       >
                         {label}
                       </label>
@@ -184,9 +215,9 @@ export function Contact() {
                         required
                         className="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all focus:border-primary"
                         style={{
-                          background: "#111633",
+                          background: "var(--input-background)",
                           borderColor: "var(--glass-border)",
-                          color: "#e8eaf6",
+                          color: "var(--foreground)",
                           fontFamily: "var(--font-body)",
                         }}
                       />
@@ -195,7 +226,7 @@ export function Contact() {
                   <div>
                     <label
                       className="block text-xs mb-2"
-                      style={{ fontFamily: "var(--font-mono)", color: "#8892b0" }}
+                      style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}
                     >
                       Message
                     </label>
@@ -208,13 +239,18 @@ export function Contact() {
                       required
                       className="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all focus:border-primary resize-none"
                       style={{
-                        background: "#111633",
+                        background: "var(--input-background)",
                         borderColor: "var(--glass-border)",
-                        color: "#e8eaf6",
+                        color: "var(--foreground)",
                         fontFamily: "var(--font-body)",
                       }}
                     />
                   </div>
+                  {error && (
+                    <p className="text-sm rounded-xl border px-4 py-3" style={{ color: "#ef4444", borderColor: "rgba(239,68,68,0.25)", background: "rgba(239,68,68,0.08)" }}>
+                      {error}
+                    </p>
+                  )}
                   <button
                     type="submit"
                     disabled={sending}

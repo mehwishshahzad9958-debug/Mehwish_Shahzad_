@@ -45,7 +45,7 @@ export function Experience() {
   const { ref, inView } = useInView(0.08);
 
   return (
-    <section id="experience" ref={ref} className="py-28 px-6" style={{ background: "#080c26" }}>
+    <section id="experience" ref={ref} className="py-28 px-6" style={{ background: "var(--background)" }}>
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -65,7 +65,7 @@ export function Experience() {
               fontFamily: "var(--font-display)",
               fontSize: "clamp(2rem, 4vw, 3rem)",
               fontWeight: 700,
-              color: "#e8eaf6",
+              color: "var(--foreground)",
             }}
           >
             Professional{" "}
@@ -101,7 +101,7 @@ export function Experience() {
                 <div
                   className="absolute left-3 md:left-1/2 md:-translate-x-1/2 top-5 w-7 h-7 rounded-full flex items-center justify-center border-2"
                   style={{
-                    background: "#080c26",
+                    background: "var(--background)",
                     borderColor: item.color,
                     boxShadow: `0 0 12px ${item.color}50`,
                     zIndex: 1,
@@ -123,13 +123,13 @@ export function Experience() {
                   <span className="text-xs mb-2 block" style={{ fontFamily: "var(--font-mono)", color: item.color }}>
                     {item.date}
                   </span>
-                  <h3 className="mb-1" style={{ fontFamily: "var(--font-display)", color: "#e8eaf6", fontWeight: 600, fontSize: "1rem" }}>
+                  <h3 className="mb-1" style={{ fontFamily: "var(--font-display)", color: "var(--foreground)", fontWeight: 600, fontSize: "1rem" }}>
                     {item.title}
                   </h3>
                   <p className="text-xs mb-2" style={{ fontFamily: "var(--font-body)", color: item.color, opacity: 0.8 }}>
                     {item.org}
                   </p>
-                  <p className="text-sm leading-relaxed mb-3" style={{ color: "#8892b0", fontFamily: "var(--font-body)" }}>
+                  <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}>
                     {item.desc}
                   </p>
                   <div className="flex flex-wrap gap-2">

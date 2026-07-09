@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { useInView } from "../hooks/useInView";
 import { ClipboardList, BarChart3 } from "lucide-react";
-import { SkillNodeMap } from "./SkillNodeMap";
 import AnimateFlow from "./AnimateFlow";
 const strengths = [
   {
@@ -34,7 +33,7 @@ export function About() {
           className="text-center mb-20"
         >
           <span className="uppercase tracking-[0.3em] text-xs" style={{ color: "#2979ff" }}>01 / About</span>
-          <h2 className="mt-4 text-4xl md:text-6xl font-bold text-white">
+          <h2 className="mt-4 text-4xl md:text-6xl font-bold" style={{ color: "var(--foreground)" }}>
             Turning Operational Complexity{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
               into Disciplined Delivery
@@ -52,7 +51,8 @@ export function About() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: index * 0.1 }}
-                className="rounded-2xl p-6 border border-white/10 bg-white/5 backdrop-blur-md"
+                className="rounded-2xl p-6 border backdrop-blur-md"
+                style={{ background: "var(--glass)", borderColor: "var(--glass-border)" }}
               >
                 <div 
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" 
@@ -60,8 +60,8 @@ export function About() {
                 >
                   <Icon size={24} style={{ color: item.color }} />
                 </div>
-                <h4 className="text-white font-bold text-lg">{item.title}</h4>
-                <p className="mt-2 text-sm text-gray-400">{item.description}</p>
+                <h4 className="font-bold text-lg" style={{ color: "var(--foreground)" }}>{item.title}</h4>
+                <p className="mt-2 text-sm" style={{ color: "var(--muted-foreground)" }}>{item.description}</p>
                 
                 <div className="mt-4 flex flex-wrap gap-2">
                   {item.tags.map((tag) => (

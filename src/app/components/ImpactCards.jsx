@@ -11,7 +11,8 @@ export function ImpactCards() {
       {stats.map((stat, i) => (
         <div 
           key={i} 
-          className="bg-[#0f172a] border border-white/10 p-4 rounded-xl w-[120px] flex flex-col items-center justify-center text-center hover:border-blue-500/50 transition-colors"
+          className="border p-4 rounded-xl w-[120px] flex flex-col items-center justify-center text-center hover:border-blue-500/50 transition-colors"
+          style={{ background: "var(--glass)", borderColor: "var(--glass-border)" }}
         >
           {/* Apply the gradient to the number */}
           <h3 
@@ -24,7 +25,7 @@ export function ImpactCards() {
           >
             {stat.value}
           </h3>
-          <p className="text-[10px] text-gray-400 mt-1 uppercase tracking-wider font-medium leading-tight">
+          <p className="text-[10px] mt-1 uppercase tracking-wider font-medium leading-tight" style={{ color: "var(--muted-foreground)" }}>
             {stat.label}
           </p>
         </div>

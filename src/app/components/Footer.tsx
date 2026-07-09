@@ -12,7 +12,7 @@ export function Footer() {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <footer className="pt-16 pb-8 px-6 border-t" style={{ background: "#030614", borderColor: "var(--glass-border)" }}>
+    <footer className="pt-16 pb-8 px-6 border-t" style={{ background: "var(--background)", borderColor: "var(--glass-border)" }}>
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           <div>
@@ -27,7 +27,7 @@ export function Footer() {
             >
               Mehwish Shahzad
             </div>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#8892b0", fontFamily: "var(--font-body)" }}>
+            <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}>
               Technical Project Coordinator, Data Analyst, and AI-powered product operations practitioner open to work all over India.
             </p>
             <div className="flex gap-3">
@@ -43,7 +43,7 @@ export function Footer() {
                   rel={href.startsWith("http") ? "noreferrer" : undefined}
                   aria-label={label}
                   className="p-2.5 rounded-xl border transition-all hover:border-primary hover:scale-110"
-                  style={{ borderColor: "var(--glass-border)", color: "#8892b0" }}
+                  style={{ borderColor: "var(--glass-border)", color: "var(--muted-foreground)", background: "var(--glass)" }}
                 >
                   <Icon size={15} />
                 </a>
@@ -61,7 +61,7 @@ export function Footer() {
                   key={label}
                   onClick={() => scrollTo(href)}
                   className="text-left text-sm transition-colors hover:text-primary"
-                  style={{ fontFamily: "var(--font-body)", color: "#8892b0" }}
+                  style={{ fontFamily: "var(--font-body)", color: "var(--muted-foreground)" }}
                 >
                   {label}
                 </button>
@@ -80,7 +80,7 @@ export function Footer() {
                 { label: "DCEM operations active", active: true },
                 { label: "AI ops focus", active: true },
               ].map(({ label, active }) => (
-                <div key={label} className="flex items-center gap-2 text-sm" style={{ fontFamily: "var(--font-body)", color: "#8892b0" }}>
+                <div key={label} className="flex items-center gap-2 text-sm" style={{ fontFamily: "var(--font-body)", color: "var(--muted-foreground)" }}>
                   <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: active ? "#22c55e" : "#8892b0" }} />
                   {label}
                 </div>
@@ -90,13 +90,13 @@ export function Footer() {
         </div>
 
         <div className="border-t flex flex-col sm:flex-row items-center justify-between gap-4 pt-8" style={{ borderColor: "var(--glass-border)" }}>
-          <p className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "#8892b0" }}>
+          <p className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}>
             (c) 2026 Mehwish Shahzad. Crafted with focus and purpose.
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-2 text-xs px-4 py-2 rounded-xl border transition-all hover:border-primary hover:text-primary"
-            style={{ fontFamily: "var(--font-mono)", color: "#8892b0", borderColor: "var(--glass-border)" }}
+            style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)", borderColor: "var(--glass-border)", background: "var(--glass)" }}
           >
             <ArrowUp size={12} />
             Back to top

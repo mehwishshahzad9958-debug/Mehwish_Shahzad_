@@ -5,8 +5,8 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
   { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 interface NavbarProps {
@@ -54,7 +54,11 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
           : "bg-transparent"
       }`}
       style={{
-        background: scrolled ? "rgba(5, 7, 26, 0.85)" : "transparent",
+        background: scrolled
+          ? darkMode
+            ? "rgba(5, 7, 26, 0.85)"
+            : "rgba(240, 244, 255, 0.88)"
+          : "transparent",
         borderColor: "var(--glass-border)",
       }}
     >
@@ -129,7 +133,10 @@ export function Navbar({ darkMode, toggleDark }: NavbarProps) {
       {mobileOpen && (
         <div
           className="md:hidden px-6 pb-6 pt-2 border-t flex flex-col gap-1"
-          style={{ borderColor: "var(--glass-border)", background: "rgba(5, 7, 26, 0.95)" }}
+          style={{
+            borderColor: "var(--glass-border)",
+            background: darkMode ? "rgba(5, 7, 26, 0.95)" : "rgba(240, 244, 255, 0.98)",
+          }}
         >
           {navLinks.map(({ label, href }) => (
             <button
