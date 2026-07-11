@@ -1,6 +1,11 @@
-# Mehwish_Shahzad
+<img width="1355" height="731" alt="image" src="https://github.com/user-attachments/assets/33ab9965-ce9a-4ec6-bd0a-9e4b0abb94e9" /># Mehwish_Shahzad
 
 # Mehwish Shahzad — Personal Portfolio
+
+<img width="1885" height="902" alt="image" src="https://github.com/user-attachments/assets/2b191a87-40a9-4cb3-a26d-ab0d685459b2" />
+<img width="1517" height="766" alt="image" src="https://github.com/user-attachments/assets/d181bbba-ee75-4ad7-b616-d05541db7f85" />
+<img width="1355" height="731" alt="image" src="https://github.com/user-attachments/assets/44c40191-6a00-4d3d-aae0-65e2e3bf6823" />
+
 
 A sleek, interactive single-page portfolio built with **React (TypeScript)** and **Vite**, styled with **Tailwind CSS**. The app showcases your profile and sections such as **About, Skills, Experience, Projects, Contact**, and a **Footer**, with a dark/light mode toggle.
 
