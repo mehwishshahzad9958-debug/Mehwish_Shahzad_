@@ -28,7 +28,7 @@ export function Footer() {
               Mehwish Shahzad
             </div>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}>
-              Technical Project Coordinator, Data Analyst, and AI-powered product operations practitioner open to work all over India.
+              Project Manager specializing in Agile delivery and cross-functional leadership. Transforming operational complexity into disciplined, on-time results.
             </p>
             <div className="flex gap-3">
               {[
@@ -71,17 +71,17 @@ export function Footer() {
 
           <div>
             <h4 className="text-xs uppercase tracking-widest mb-5" style={{ fontFamily: "var(--font-mono)", color: "#2979ff" }}>
-              Current Status
+              Core Competencies
             </h4>
             <div className="space-y-3">
               {[
-                { label: "Open to opportunities", active: true },
-                { label: "Open across India", active: true },
-                { label: "DCEM operations active", active: true },
-                { label: "AI ops focus", active: true },
-              ].map(({ label, active }) => (
+                { label: "Agile Governance" },
+                { label: "Stakeholder Management" },
+                { label: "BRD & SOP Ownership" },
+                { label: "Operational Delivery" },
+              ].map(({ label }) => (
                 <div key={label} className="flex items-center gap-2 text-sm" style={{ fontFamily: "var(--font-body)", color: "var(--muted-foreground)" }}>
-                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: active ? "#22c55e" : "#8892b0" }} />
+                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: "#2979ff" }} />
                   {label}
                 </div>
               ))}
@@ -91,7 +91,7 @@ export function Footer() {
 
         <div className="border-t flex flex-col sm:flex-row items-center justify-between gap-4 pt-8" style={{ borderColor: "var(--glass-border)" }}>
           <p className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}>
-            (c) 2026 Mehwish Shahzad. Crafted with focus and purpose.
+            (c) 2026 Mehwish Shahzad. Committed to excellence in project leadership.
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
