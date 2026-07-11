@@ -1,0 +1,258 @@
+[33mcommit ee0292b5fe417248ad4d575c67fa26e83e07915c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mMehwishDeveloper[m[33m)[m
+Merge: 757f8d7c 37ed46e2
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sun Jul 12 03:23:47 2026 +0530
+
+    Merge branch 'main' of https://github.com/mehwishshahzad9958-debug/Mehwish_Shahzad_
+
+[33mcommit 757f8d7c6d856a1582574efad43b14a171a9a653[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sun Jul 12 03:20:48 2026 +0530
+
+    Research Paper
+
+[33mcommit 5612b9f27a1e550eea8d540a767a8f06b655c665[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sun Jul 12 02:57:38 2026 +0530
+
+    Research Paper
+
+[33mcommit 37ed46e279fca0111b9f5d07b583f5c8d4b6269b[m
+Author: Mehwish Shahzad <mehwishshahzad9958@gmail.com>
+Date:   Sun Jul 12 02:37:00 2026 +0530
+
+    Clean up README.md by removing unnecessary content
+    
+    Removed extra images and whitespace from README.
+
+[33mcommit eb1b889135baf59816ede80aec59045a2e4120d1[m
+Author: Mehwish Shahzad <mehwishshahzad9958@gmail.com>
+Date:   Sun Jul 12 02:36:03 2026 +0530
+
+    Refactor README to eliminate duplicate content
+    
+    Removed duplicate portfolio description and adjusted formatting.
+
+[33mcommit 09d4f887a4e6fa7bddb800636c2009d8b05d56b3[m
+Author: Mehwish Shahzad <mehwishshahzad9958@gmail.com>
+Date:   Sun Jul 12 02:35:13 2026 +0530
+
+    Update README with images and project details
+    
+    Added multiple images and enhanced project description.
+
+[33mcommit a2abbc75a44e415458f9f67b611bbc9b4d2d20c9[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sun Jul 12 02:22:19 2026 +0530
+
+    skills updated
+
+[33mcommit 9d921c819598790517026f45e3e08c37222ce3c3[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sun Jul 12 02:18:32 2026 +0530
+
+    skills updated
+
+[33mcommit acdce134759f7dde21f2b0c31696a4fa3aa31bf6[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sun Jul 12 01:33:54 2026 +0530
+
+    portfolio details pm oriented
+
+[33mcommit 0c33fa4e62bd24e99e9e9e26272ebc30db093fb6[m[33m ([m[1;32mmehwish_ai_Developer[m[33m, [m[1;32mfeature/powerbi-project[m[33m)[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sun Jul 12 00:26:50 2026 +0530
+
+    added testimonials
+
+[33mcommit 498124a19fc7a81820abcbdaebc603056577c088[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sat Jul 11 22:18:00 2026 +0530
+
+    added testimonials
+
+[33mcommit cf6ab6e4e1a8c03e58c2855a0c92098c2c3ebbd5[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sat Jul 11 20:35:45 2026 +0530
+
+    personalized portfolio
+
+[33mcommit 934c0fe548b9ea554110bf1642111a9b83691620[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Thu Jul 9 05:34:45 2026 +0530
+
+    Project saction
+
+[33mcommit c61d91caec1aa7c699a3f4715a30a908aed8f6ed[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Thu Jul 9 04:48:37 2026 +0530
+
+    Update tool list and animate flow component
+
+[33mcommit e351539304ba473aeab7c96e855d31eaf10d1ee4[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Thu Jul 9 04:42:01 2026 +0530
+
+    Update tool list and animate flow component
+
+[33mcommit 5c37b36bec3f508a0d79350b5af82d4b3807b5f4[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Thu Jul 9 04:33:48 2026 +0530
+
+    Update tool list and animate flow component
+
+[33mcommit 660e4d78fd21aa8914e30e15cc3aa31304ae1999[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Wed Jul 8 06:36:20 2026 +0530
+
+    Removed Professional Journey section from About page
+
+[33mcommit 350e4922d77d1afa2b326212d60fe58e4c1b6e69[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Wed Jul 8 05:45:15 2026 +0530
+
+    Initial commit
+
+[33mcommit 10f440f357d180a32c3fad34da657bc789848c4c[m
+Merge: a6b01a5d 04444501
+Author: Mehwish Shahzad <mehwishshahzad9958@gmail.com>
+Date:   Tue Jul 7 05:42:15 2026 +0530
+
+    Merge pull request #2 from mehwishshahzad9958-debug/MehwishDeveloper
+    
+    Mehwish developer
+
+[33mcommit 044445017e001761c3be9c205153ea5a55cfb826[m[33m ([m[1;31morigin/MehwishDeveloper[m[33m)[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Tue Jul 7 05:21:08 2026 +0530
+
+    rearranging according to pm
+
+[33mcommit ba69661a01d2b8f58e7a69cb8e1e05b9c514a2c3[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Tue Jul 7 03:41:49 2026 +0530
+
+    Finalize changes to About component
+
+[33mcommit ae749cd5d1ea6d8cb199b249dbeff33663a756a9[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Tue Jul 7 03:31:32 2026 +0530
+
+    Fix duplicated code and resolve merge conflict
+
+[33mcommit 612d132a66f9b2295145968465dc5e6e8686c34c[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Tue Jul 7 03:29:25 2026 +0530
+
+    Fix syntax errors from manual merge
+
+[33mcommit ee0123606120892a7dfaae16152d11a68a944255[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Tue Jul 7 03:07:43 2026 +0530
+
+    Resolve final merge conflicts in source files
+
+[33mcommit df6fd95e84b3e6534352a595da5961c9d1127ae4[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Tue Jul 7 02:55:23 2026 +0530
+
+    Fix merge conflict in package.json
+
+[33mcommit 70906b215ccb9207b8a3fff9bf93a3cd45b605cb[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Tue Jul 7 02:54:32 2026 +0530
+
+    Fix merge conflict in package.json
+
+[33mcommit a6b01a5da60a688fdaac68cea51fbf448f3bb589[m
+Merge: 66f1680f a8aee1f0
+Author: Mehwish Shahzad <mehwishshahzad9958@gmail.com>
+Date:   Tue Jul 7 02:50:05 2026 +0530
+
+    Merge pull request #1 from mehwishshahzad9958-debug/MehwishDeveloper
+    
+    Mehwish developer
+
+[33mcommit a8aee1f0855c3759b86e138f47e0731d05d574cc[m
+Merge: f367aba8 66f1680f
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Tue Jul 7 02:46:45 2026 +0530
+
+    Merge main into MehwishDeveloper and resolve conflicts
+
+[33mcommit 66f1680f295fdaa4c675b2c7928272c5baabee5f[m
+Merge: c81818a4 bd7b61c1
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Tue Jul 7 02:32:42 2026 +0530
+
+    pm oriented
+
+[33mcommit c81818a45eb92ed05f8fc0df402c3207324161a0[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Tue Jul 7 02:26:39 2026 +0530
+
+    Project Management Oriented Portfolio Updation
+
+[33mcommit bd7b61c16c76182405d38947fbef3f9cfff51b61[m
+Author: Mehwish Shahzad <mehwishshahzad9958@gmail.com>
+Date:   Sun Jul 5 21:43:09 2026 +0530
+
+    README
+    
+    Added detailed project description, tech stack, and setup instructions.
+
+[33mcommit c2e8db4d366d85c4a1d3237b8b381f17b4403a93[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sun Jun 28 16:13:30 2026 +0530
+
+    Name update
+
+[33mcommit 10894400105659533ede4928eeddbe53dd52c4d6[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sun Jun 28 15:47:40 2026 +0530
+
+    Copy right update
+
+[33mcommit 088c0b4e7b359032db334e9c577b5b5f16112a8c[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sun Jun 28 09:14:46 2026 +0530
+
+    update portfolio Title
+
+[33mcommit 89921ef532b8a6b0f5caf9c12a0a06b65cfb1b45[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sun Jun 28 08:05:25 2026 +0530
+
+    Remove Navigation column, copyright back-to-top button from footer
+
+[33mcommit cec50a97d891941e045a9fa4279c007679e36495[m[33m ([m[1;31morigin/feature/powerbi-project[m[33m)[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sun Jun 28 00:43:04 2026 +0530
+
+    Project updtae
+
+[33mcommit b08a800139a311ab524fb84713da30fd2c15987e[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Mon Jun 15 02:44:18 2026 +0530
+
+    changes
+
+[33mcommit e2c0bc67b331cca62b69381000454919eaa9b00b[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Mon Jun 15 02:15:11 2026 +0530
+
+    initial commit
+
+[33mcommit f367aba841362301a9c646f7aec12f44fe3b9494[m
+Author: Mehwish Shahzad <your-email@example.com>
+Date:   Sun Jun 14 21:49:11 2026 +0530
+
+    design correction
+
+[33mcommit acfd48e8ee15aa438ddb3e2ac266118fea32e130[m
+Author: Mehwish Shahzad <mehwishshahzad9958@gmail.com>
+Date:   Sun Jun 14 01:16:05 2026 +0530
+
+    Add files via upload
+
+[33mcommit ef772634f1528ab95a28453f37
