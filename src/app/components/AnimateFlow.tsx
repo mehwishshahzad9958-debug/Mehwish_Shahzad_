@@ -16,7 +16,9 @@ const clamp = (n: number, min: number, max: number) => Math.max(min, Math.min(ma
 
 export default function Animate() {
   const [mode, setMode] = useState<"consuming" | "creating">("consuming");
+  // removed duplicate-animation driver
   const [tick, setTick] = useState(0);
+
   const [activeTool, setActiveTool] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -85,8 +87,9 @@ export default function Animate() {
 
   const onToggle = () => {
     setMode((m) => (m === "consuming" ? "creating" : "consuming"));
-    setTick((t) => t + 1);
+    // tick removed to avoid running duplicate animation timelines
   };
+
 
   // Layout constants (vector-ish)
   const WIDTH = isMobile ? 420 : 960;

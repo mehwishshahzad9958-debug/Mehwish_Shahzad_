@@ -1,3 +1,18 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+@layer base {
+  :root {
+    --background: #f0f4ff;
+    --foreground: #0d1130;
+  }
+  .dark {
+    --background: #05071a;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
