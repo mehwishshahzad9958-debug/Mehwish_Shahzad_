@@ -10,7 +10,7 @@ const timeline = [
     title: "Project Lead",
     date: "Dec 2024 - Feb 2026",
     desc: "Led engineers and coordinated stakeholders across Pan-India operations, monitoring KPIs to keep delivery on track driving a 5% data-accuracy gain within 2 months through improved reporting and process automation.",
-    highlights: ["Stakeholder reporting", "RCA", "Process coordination", "Business requirements","Technical models","SNMP","Grafana"],
+    highlights: ["Stakeholder reporting", "RCA", "Process coordination", "Business requirements", "Technical models", "SNMP", "Grafana"],
   },
   {
     icon: BarChart3,
@@ -28,16 +28,17 @@ const timeline = [
     title: "Junior Project Manager",
     org: "CCE-PMT",
     desc: "Drove admission conversion from 40% to 80%, generating ₹20 lakh in monthly revenue through data-driven enrollment strategy and performance tracking.",
-    highlights: ["Enrollment Strategy", " Performance Optimization", "Employ Trainning","Management Skills"],
+    highlights: ["Enrollment Strategy", " Performance Optimization", "Employ Trainning", "Management Skills"],
   },
-    {
+  {
     icon: BookOpen,
-    color: "#059669",
-    date: "2 Months- 2020",
+    color: "#71dfd4",
+    date: "2020",
     title: "Volunteer Project Manager",
     org: "Miles2Smile Foundation",
-    desc: "We built a flexible education framework that treats every student’s learning path as unique. By organizing students by their current proficiency rather than their grade level, We've enabled them to tackle complex subjects at their own pace and take pride in helping their peers succeed.",
-    highlights: ["Strategic Planning", "Problem Solving", "Innovation","Process Design"],
+    link: "https://miles2smile.org/",
+    desc: "We built a flexible education framework that treats every student’s learning path as unique. By organizing students by their current proficiency rather than their grade level, We've enabled them to tackle complex subjects at their own pace.",
+    highlights: ["Strategic Planning", "Problem Solving", "Innovation", "Process Design"],
   },
 ];
 
@@ -126,9 +127,24 @@ export function Experience() {
                   <h3 className="mb-1" style={{ fontFamily: "var(--font-display)", color: "var(--foreground)", fontWeight: 600, fontSize: "1rem" }}>
                     {item.title}
                   </h3>
-                  <p className="text-xs mb-2" style={{ fontFamily: "var(--font-body)", color: item.color, opacity: 0.8 }}>
-                    {item.org}
-                  </p>
+                  
+                  {/* Link Implementation */}
+                  {item.link ? (
+                    <a 
+                      href={item.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-block text-xs mb-2 hover:opacity-70 transition-opacity underline decoration-dotted"
+                      style={{ color: item.color }}
+                    >
+                      {item.org} ↗
+                    </a>
+                  ) : (
+                    <p className="text-xs mb-2" style={{ fontFamily: "var(--font-body)", color: item.color, opacity: 0.8 }}>
+                      {item.org}
+                    </p>
+                  )}
+
                   <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}>
                     {item.desc}
                   </p>
