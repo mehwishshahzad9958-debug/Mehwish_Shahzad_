@@ -5,7 +5,8 @@ import { About } from "./components/About";
 import { Skills } from "./components/skills";
 import { Experience } from "./components/Experience";
 import { Projects } from "./components/Projects";
-import  ResearchPaper from "./components/ResearchPaper";
+import ResearchPaper from "./components/ResearchPaper";
+import Testimonials from "./components/Testimonials"; // Corrected import
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
@@ -31,6 +32,7 @@ export default function App() {
         <Experience />
         <Projects />
         <ResearchPaper />
+        <Testimonials /> 
         <Contact />
       </main>
       
