@@ -4,7 +4,7 @@ import { FileText, FolderOpen } from "lucide-react";
 
 const paperCategories = [
   {
-    title: "Operational Strategy Reports",
+    title: "Technical Research Papers & Case Studies",
     desc: "Comprehensive analysis of technical operations and infrastructure optimization.",
     type: "Folder",
     icon: FolderOpen,
@@ -12,8 +12,8 @@ const paperCategories = [
     color: "#ff9800"
   },
   {
-    title: "Infrastructure Analysis Study",
-    desc: "In-depth research on network performance and system scalability.",
+    title: "AI in Neuro-Marketing Research Paper",
+    desc: "In-depth research on AI integration in neuro-marketing strategies and consumer behavior analysis.",
     type: "PDF",
     icon: FileText,
     link: "https://drive.google.com/file/d/1oyFuPoGThyzmp4wfvGkQedEcjw_6vaAM/view?usp=sharing", // Link to single PDF
