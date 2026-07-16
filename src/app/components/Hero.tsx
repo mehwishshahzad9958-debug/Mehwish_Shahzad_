@@ -61,7 +61,7 @@ return (
             <span className="block text-xl md:text-2xl mb-2 font-bold" style={{ color: "var(--foreground)" }}>Hi, I'm a</span>
             <span style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", background: "linear-gradient(135deg, #2979ff 0%, #7c3aed 50%, #00e5ff 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>PROJECT</span>
             <br />
-            <span style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "var(--foreground)" }}>Manager</span>
+            <span style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "var(--foreground)" }}>Lead</span>
           </h1>
 
           <div className="mb-0 flex items-center gap-2" style={{ fontFamily: "var(--font-mono)", color: "var(--muted-foreground)" }}>

@@ -28,7 +28,7 @@ export function Footer() {
               Mehwish Shahzad
             </div>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--muted-foreground)", fontFamily: "var(--font-body)" }}>
-              Project Manager specializing in Agile delivery and cross-functional leadership. Transforming operational complexity into disciplined, on-time results.
+              Project Lead specializing in Agile delivery and cross-functional leadership. Transforming operational complexity into disciplined, on-time results.
             </p>
             <div className="flex gap-3">
               {[
